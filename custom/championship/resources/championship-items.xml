@@ -3,16 +3,17 @@
 <items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:noNamespaceSchemaLocation="items.xsd">
 
+
+	<collectiontypes>
+		<collectiontype code="DriverList" elementtype="Driver" autocreate="true" generate="true" type="list" />
+	</collectiontypes>
+
 	<enumtypes>
 		<enumtype code="TypeEnum" autocreate="true" generate="true" dynamic="false">
 			<value code="CAR" />
 			<value code="MCYCLE" />
 		</enumtype>
 	</enumtypes>
-
-	<collectiontypes>
-		<collectiontype code="DriverList" elementype="Driver" autocreate="true" generate="true" type="list" />
-	</collectiontypes>
 
 	<relations>
 		<relation code="RaceGranPrixRelation" localized="false" generate="true" autocreate="true">
