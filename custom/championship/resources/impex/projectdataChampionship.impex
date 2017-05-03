@@ -1,0 +1,71 @@
+INSERT_UPDATE Vehicle;	code[unique=true];name;type(code);hp;engineSize
+						;1;Ferrari;CAR;730;2400
+						;2;Mercedes;CAR;730;2400
+						;3;Red Bull;CAR;730;2400
+						;4;Force India;CAR;730;2400
+						;5;McLaren;CAR;730;2400
+						;6;Yahama R1 2017;MCYCLE;250;1000
+						;7;Honda HSV;MCYCLE;250;1000
+						;8;Ducati Desmosedici;MCYCLE;270;1000
+						;9;Suzuki GSV-R;MCYCLE;250;1000
+						;10; Yahama R1 2016;MCYCLE;250;1000
+
+INSERT_UPDATE Driver;	code[unique=true];name;surname;nationality;age;vehicle(code)
+						;1;Sebastian;Vettel;Germany;28;1
+						;2;Kimi;Raikkonen;Finland;34;1
+						;3;Lewis;Hamilton;Great Britain;28;2
+						;4;Valtteri;Bottas;Finland;27;2
+						;5;Daniel;Ricciardo;Australia;25;3
+						;6;Max;Verstappen;Netherlands;19;3
+						;7;Sergio;Perez;Mexico;27;4
+						;8;Esteban;Ocon;Mexico;21;4
+						;9;Fernando;Alonso;Spain;34;5
+						;10;Stoffel;Vandoorne;Belgium;24;5
+						;11;Valentino;Rossi;Italy;35;6
+						;12;Maverick;Vinales;Spain;23;6
+						;13;Marc;Marquez;Spain;24;7
+						;14;Daniel;Pedrosa;Spain;33;7
+						;15;Jorge;Lorenzo;Spain;29;8
+						;16;Andrea;Dovizioso;Italy;30;8
+						;17;Andrea;Iannone;Italy;27;9
+						;18;Alex;Rins;Spain;23;9
+						;19;Johann;Zarco;France;28;10
+						;20;Jonas;Folger;Germany;26;10
+
+INSERT_UPDATE Stable;	code[unique=true];name;nation;drivers(code)
+						;1;Scuderia Ferrari;Italy;1,2
+						;2;Mercedes AMG;Germany;3,4
+						;3;Red Bull Racing;Austria;5,6
+						;4;Sahara Force India;India;7,8
+						;5;McLaren Honda;Great Britain;9,10
+						;6;Movistar Yamaha MotoGP;Japan;11,12
+						;7;Repsol Honda Team;Japan;13,14
+						;8;Ducati Team;Italy;15,16
+						;9;Team Suzuki Ecstar;Japan;17,18
+						;10;Monster Yamaha Tech 3;Japan;19,20
+
+INSERT_UPDATE GranPrix;	code[unique=true];name;laps;date;nation
+						;1;Gran Premio di Monza;58;2017-09-08;Italy
+						;2;SPA Francochamps;47;2017-08-27;Belgium
+						;3;Albert Park Melbourne;67;2017-03-14;Australia
+						;4;Nurburgring;72;2017-06-18;Germany
+						;5;Gran Prix de Barcelona;78;2017-05-07;Spain
+						;6;Silverstone;69;2017-07-21;Great Britain
+						;7;Suzuka;54;2017-10-10;Japan
+						;8;A1 Ring Spielberg;76;2017-06-28;Austria
+						;9;Grand Prix de Monte Carlo;78;2017-05-21;Monaco
+						;10;Hungaroring;71;2017-06-10;Hungary
+						;11;Mugello;24;2017-06-04;Italy
+						;12;Le Mans;23;2017-06-11;France
+						;13;Laguna Seca;25;2017-08-15;United States
+						;14;Jerez de la Frontera;27;2017-05-12;Spain
+						;15;Brno;22;2017-08-28;Czech Republic
+						;16;Aragon GP;28;2017-09-15;Spain
+						;17;Phillip Island;26;2017-11-22;Australia
+						;18;Donington;23;2017-04-21;Great Britain
+						;19;Termas de Rio Hondo;26;2017-04-12;Argentina
+						;20;Assen;20;2017-05-01;Netherlands
+
+INSERT_UPDATE RaceChampionship;	code[unique=true];type(code);name;drivers(code);granPrix(code)
+								;1;CAR;Formula 1 World Championship;1,2,3,4,5,6,7,8,9,10;1,2,3,4,5,6,7,8,9,10
+								;2;MCYCLE;MotoGP World Championship;11,12,13,14,15,16,17,18,19,20;11,12,13,14,15,16,17,18,19,20
