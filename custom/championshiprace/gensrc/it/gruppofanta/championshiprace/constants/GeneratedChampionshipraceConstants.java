@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 4-mag-2017 16.43.58                         ---
+ * --- Generated at 4-mag-2017 23.26.12                         ---
  * ----------------------------------------------------------------
  */
 package it.gruppofanta.championshiprace.constants;
