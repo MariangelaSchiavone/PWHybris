@@ -6,6 +6,7 @@ import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class DefaultRaceChampionshipDao implements RaceChampionshipDao
 	}
 
 	@Override
-	public List<String> retrieveGranPrixCalendar(final String code)
+	public List<Date> retrieveGranPrixCalendar(final String code)
 	{
 		final List<RaceChampionshipModel> raceChampionships = findRaceChampionshipsByCode(code);
 		if (raceChampionships.isEmpty())
@@ -59,7 +60,7 @@ public class DefaultRaceChampionshipDao implements RaceChampionshipDao
 					"RaceChampionship code '" + code + "' is not unique, " + raceChampionships.size() + " stadiums found!");
 		}
 		final RaceChampionshipModel result = raceChampionships.get(0);
-		final List<String> toReturn = new LinkedList<String>();
+		final List<Date> toReturn = new LinkedList<Date>();
 		final Collection<GranPrixModel> granPrix = result.getGranPrix();
 		for (final GranPrixModel granPrixModel : granPrix)
 		{

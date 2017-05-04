@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 4-mag-2017 1.12.48                          ---
+ * --- Generated at 4-mag-2017 16.43.58                         ---
  * ----------------------------------------------------------------
  */
 package it.gruppofanta.championship.jalo;
@@ -20,6 +20,7 @@ import it.gruppofanta.championship.jalo.Placing;
 import it.gruppofanta.championship.jalo.RaceChampionship;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -130,43 +131,43 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.date</code> attribute.
-	 * @return the date
+	 * @return the date - Date
 	 */
-	public String getDate(final SessionContext ctx)
+	public Date getDate(final SessionContext ctx)
 	{
-		return (String)getProperty( ctx, DATE);
+		return (Date)getProperty( ctx, DATE);
 	}
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.date</code> attribute.
-	 * @return the date
+	 * @return the date - Date
 	 */
-	public String getDate()
+	public Date getDate()
 	{
 		return getDate( getSession().getSessionContext() );
 	}
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.date</code> attribute. 
-	 * @param value the date
+	 * @param value the date - Date
 	 */
-	public void setDate(final SessionContext ctx, final String value)
+	public void setDate(final SessionContext ctx, final Date value)
 	{
 		setProperty(ctx, DATE,value);
 	}
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.date</code> attribute. 
-	 * @param value the date
+	 * @param value the date - Date
 	 */
-	public void setDate(final String value)
+	public void setDate(final Date value)
 	{
 		setDate( getSession().getSessionContext(), value );
 	}
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.laps</code> attribute.
-	 * @return the laps - Number of laps
+	 * @return the laps - Laps
 	 */
 	public Integer getLaps(final SessionContext ctx)
 	{
@@ -175,7 +176,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.laps</code> attribute.
-	 * @return the laps - Number of laps
+	 * @return the laps - Laps
 	 */
 	public Integer getLaps()
 	{
@@ -184,7 +185,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.laps</code> attribute. 
-	 * @return the laps - Number of laps
+	 * @return the laps - Laps
 	 */
 	public int getLapsAsPrimitive(final SessionContext ctx)
 	{
@@ -194,7 +195,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.laps</code> attribute. 
-	 * @return the laps - Number of laps
+	 * @return the laps - Laps
 	 */
 	public int getLapsAsPrimitive()
 	{
@@ -203,7 +204,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.laps</code> attribute. 
-	 * @param value the laps - Number of laps
+	 * @param value the laps - Laps
 	 */
 	public void setLaps(final SessionContext ctx, final Integer value)
 	{
@@ -212,7 +213,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.laps</code> attribute. 
-	 * @param value the laps - Number of laps
+	 * @param value the laps - Laps
 	 */
 	public void setLaps(final Integer value)
 	{
@@ -221,7 +222,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.laps</code> attribute. 
-	 * @param value the laps - Number of laps
+	 * @param value the laps - Laps
 	 */
 	public void setLaps(final SessionContext ctx, final int value)
 	{
@@ -230,7 +231,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.laps</code> attribute. 
-	 * @param value the laps - Number of laps
+	 * @param value the laps - Laps
 	 */
 	public void setLaps(final int value)
 	{
@@ -239,7 +240,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.name</code> attribute.
-	 * @return the name
+	 * @return the name - Name
 	 */
 	public String getName(final SessionContext ctx)
 	{
@@ -248,7 +249,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.name</code> attribute.
-	 * @return the name
+	 * @return the name - Name
 	 */
 	public String getName()
 	{
@@ -257,7 +258,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.name</code> attribute. 
-	 * @param value the name
+	 * @param value the name - Name
 	 */
 	public void setName(final SessionContext ctx, final String value)
 	{
@@ -266,7 +267,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.name</code> attribute. 
-	 * @param value the name
+	 * @param value the name - Name
 	 */
 	public void setName(final String value)
 	{
@@ -275,7 +276,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.nation</code> attribute.
-	 * @return the nation
+	 * @return the nation - Nation
 	 */
 	public String getNation(final SessionContext ctx)
 	{
@@ -284,7 +285,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>GranPrix.nation</code> attribute.
-	 * @return the nation
+	 * @return the nation - Nation
 	 */
 	public String getNation()
 	{
@@ -293,7 +294,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.nation</code> attribute. 
-	 * @param value the nation
+	 * @param value the nation - Nation
 	 */
 	public void setNation(final SessionContext ctx, final String value)
 	{
@@ -302,7 +303,7 @@ public abstract class GeneratedGranPrix extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>GranPrix.nation</code> attribute. 
-	 * @param value the nation
+	 * @param value the nation - Nation
 	 */
 	public void setNation(final String value)
 	{

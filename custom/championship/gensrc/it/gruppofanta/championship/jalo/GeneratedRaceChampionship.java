@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 4-mag-2017 1.12.48                          ---
+ * --- Generated at 4-mag-2017 16.43.58                         ---
  * ----------------------------------------------------------------
  */
 package it.gruppofanta.championship.jalo;
@@ -28,10 +28,10 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 {
 	/** Qualifier of the <code>RaceChampionship.code</code> attribute **/
 	public static final String CODE = "code";
-	/** Qualifier of the <code>RaceChampionship.name</code> attribute **/
-	public static final String NAME = "name";
 	/** Qualifier of the <code>RaceChampionship.type</code> attribute **/
 	public static final String TYPE = "type";
+	/** Qualifier of the <code>RaceChampionship.name</code> attribute **/
+	public static final String NAME = "name";
 	/** Qualifier of the <code>RaceChampionship.granPrix</code> attribute **/
 	public static final String GRANPRIX = "granPrix";
 	/** Qualifier of the <code>RaceChampionship.drivers</code> attribute **/
@@ -65,8 +65,8 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 	{
 		final Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
 		tmp.put(CODE, AttributeMode.INITIAL);
-		tmp.put(NAME, AttributeMode.INITIAL);
 		tmp.put(TYPE, AttributeMode.INITIAL);
+		tmp.put(NAME, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
@@ -257,7 +257,7 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>RaceChampionship.name</code> attribute.
-	 * @return the name
+	 * @return the name - Name
 	 */
 	public String getName(final SessionContext ctx)
 	{
@@ -266,7 +266,7 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>RaceChampionship.name</code> attribute.
-	 * @return the name
+	 * @return the name - Name
 	 */
 	public String getName()
 	{
@@ -275,7 +275,7 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>RaceChampionship.name</code> attribute. 
-	 * @param value the name
+	 * @param value the name - Name
 	 */
 	public void setName(final SessionContext ctx, final String value)
 	{
@@ -284,7 +284,7 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>RaceChampionship.name</code> attribute. 
-	 * @param value the name
+	 * @param value the name - Name
 	 */
 	public void setName(final String value)
 	{

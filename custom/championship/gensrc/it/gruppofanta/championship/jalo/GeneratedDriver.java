@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 4-mag-2017 1.12.48                          ---
+ * --- Generated at 4-mag-2017 16.43.58                         ---
  * ----------------------------------------------------------------
  */
 package it.gruppofanta.championship.jalo;
@@ -14,12 +14,9 @@ import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.type.CollectionType;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.util.BidirectionalOneToManyHandler;
-import de.hybris.platform.util.OneToManyHandler;
 import it.gruppofanta.championship.constants.ChampionshipConstants;
-import it.gruppofanta.championship.jalo.Placing;
 import it.gruppofanta.championship.jalo.RaceChampionship;
 import it.gruppofanta.championship.jalo.Vehicle;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,8 +41,6 @@ public abstract class GeneratedDriver extends GenericItem
 	public static final String VEHICLE = "vehicle";
 	/** Qualifier of the <code>Driver.raceChampionship</code> attribute **/
 	public static final String RACECHAMPIONSHIP = "raceChampionship";
-	/** Qualifier of the <code>Driver.placings</code> attribute **/
-	public static final String PLACINGS = "placings";
 	/**
 	* {@link BidirectionalOneToManyHandler} for handling 1:n RACECHAMPIONSHIP's relation attributes from 'one' side.
 	**/
@@ -53,18 +48,6 @@ public abstract class GeneratedDriver extends GenericItem
 	ChampionshipConstants.TC.DRIVER,
 	false,
 	"raceChampionship",
-	null,
-	false,
-	true,
-	CollectionType.COLLECTION
-	);
-	/**
-	* {@link OneToManyHandler} for handling 1:n PLACINGS's relation attributes from 'many' side.
-	**/
-	protected static final OneToManyHandler<Placing> PLACINGSHANDLER = new OneToManyHandler<Placing>(
-	ChampionshipConstants.TC.PLACING,
-	false,
-	"driver",
 	null,
 	false,
 	true,
@@ -91,7 +74,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.age</code> attribute.
-	 * @return the age
+	 * @return the age - Age
 	 */
 	public Integer getAge(final SessionContext ctx)
 	{
@@ -100,7 +83,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.age</code> attribute.
-	 * @return the age
+	 * @return the age - Age
 	 */
 	public Integer getAge()
 	{
@@ -109,7 +92,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.age</code> attribute. 
-	 * @return the age
+	 * @return the age - Age
 	 */
 	public int getAgeAsPrimitive(final SessionContext ctx)
 	{
@@ -119,7 +102,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.age</code> attribute. 
-	 * @return the age
+	 * @return the age - Age
 	 */
 	public int getAgeAsPrimitive()
 	{
@@ -128,7 +111,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.age</code> attribute. 
-	 * @param value the age
+	 * @param value the age - Age
 	 */
 	public void setAge(final SessionContext ctx, final Integer value)
 	{
@@ -137,7 +120,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.age</code> attribute. 
-	 * @param value the age
+	 * @param value the age - Age
 	 */
 	public void setAge(final Integer value)
 	{
@@ -146,7 +129,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.age</code> attribute. 
-	 * @param value the age
+	 * @param value the age - Age
 	 */
 	public void setAge(final SessionContext ctx, final int value)
 	{
@@ -155,7 +138,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.age</code> attribute. 
-	 * @param value the age
+	 * @param value the age - Age
 	 */
 	public void setAge(final int value)
 	{
@@ -207,7 +190,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.name</code> attribute.
-	 * @return the name
+	 * @return the name - Name
 	 */
 	public String getName(final SessionContext ctx)
 	{
@@ -216,7 +199,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.name</code> attribute.
-	 * @return the name
+	 * @return the name - Name
 	 */
 	public String getName()
 	{
@@ -225,7 +208,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.name</code> attribute. 
-	 * @param value the name
+	 * @param value the name - Name
 	 */
 	public void setName(final SessionContext ctx, final String value)
 	{
@@ -234,7 +217,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.name</code> attribute. 
-	 * @param value the name
+	 * @param value the name - Name
 	 */
 	public void setName(final String value)
 	{
@@ -243,7 +226,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.nationality</code> attribute.
-	 * @return the nationality
+	 * @return the nationality - Nationality
 	 */
 	public String getNationality(final SessionContext ctx)
 	{
@@ -252,7 +235,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.nationality</code> attribute.
-	 * @return the nationality
+	 * @return the nationality - Nationality
 	 */
 	public String getNationality()
 	{
@@ -261,7 +244,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.nationality</code> attribute. 
-	 * @param value the nationality
+	 * @param value the nationality - Nationality
 	 */
 	public void setNationality(final SessionContext ctx, final String value)
 	{
@@ -270,83 +253,11 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.nationality</code> attribute. 
-	 * @param value the nationality
+	 * @param value the nationality - Nationality
 	 */
 	public void setNationality(final String value)
 	{
 		setNationality( getSession().getSessionContext(), value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Driver.placings</code> attribute.
-	 * @return the placings
-	 */
-	public Collection<Placing> getPlacings(final SessionContext ctx)
-	{
-		return PLACINGSHANDLER.getValues( ctx, this );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Driver.placings</code> attribute.
-	 * @return the placings
-	 */
-	public Collection<Placing> getPlacings()
-	{
-		return getPlacings( getSession().getSessionContext() );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Driver.placings</code> attribute. 
-	 * @param value the placings
-	 */
-	public void setPlacings(final SessionContext ctx, final Collection<Placing> value)
-	{
-		PLACINGSHANDLER.setValues( ctx, this, value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Driver.placings</code> attribute. 
-	 * @param value the placings
-	 */
-	public void setPlacings(final Collection<Placing> value)
-	{
-		setPlacings( getSession().getSessionContext(), value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Adds <code>value</code> to placings. 
-	 * @param value the item to add to placings
-	 */
-	public void addToPlacings(final SessionContext ctx, final Placing value)
-	{
-		PLACINGSHANDLER.addValue( ctx, this, value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Adds <code>value</code> to placings. 
-	 * @param value the item to add to placings
-	 */
-	public void addToPlacings(final Placing value)
-	{
-		addToPlacings( getSession().getSessionContext(), value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Removes <code>value</code> from placings. 
-	 * @param value the item to remove from placings
-	 */
-	public void removeFromPlacings(final SessionContext ctx, final Placing value)
-	{
-		PLACINGSHANDLER.removeValue( ctx, this, value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Removes <code>value</code> from placings. 
-	 * @param value the item to remove from placings
-	 */
-	public void removeFromPlacings(final Placing value)
-	{
-		removeFromPlacings( getSession().getSessionContext(), value );
 	}
 	
 	/**
@@ -387,7 +298,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.surname</code> attribute.
-	 * @return the surname
+	 * @return the surname - Surname
 	 */
 	public String getSurname(final SessionContext ctx)
 	{
@@ -396,7 +307,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.surname</code> attribute.
-	 * @return the surname
+	 * @return the surname - Surname
 	 */
 	public String getSurname()
 	{
@@ -405,7 +316,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.surname</code> attribute. 
-	 * @param value the surname
+	 * @param value the surname - Surname
 	 */
 	public void setSurname(final SessionContext ctx, final String value)
 	{
@@ -414,7 +325,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.surname</code> attribute. 
-	 * @param value the surname
+	 * @param value the surname - Surname
 	 */
 	public void setSurname(final String value)
 	{
@@ -423,7 +334,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.vehicle</code> attribute.
-	 * @return the vehicle
+	 * @return the vehicle - Vehicle
 	 */
 	public Vehicle getVehicle(final SessionContext ctx)
 	{
@@ -432,7 +343,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Driver.vehicle</code> attribute.
-	 * @return the vehicle
+	 * @return the vehicle - Vehicle
 	 */
 	public Vehicle getVehicle()
 	{
@@ -441,7 +352,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.vehicle</code> attribute. 
-	 * @param value the vehicle
+	 * @param value the vehicle - Vehicle
 	 */
 	public void setVehicle(final SessionContext ctx, final Vehicle value)
 	{
@@ -450,7 +361,7 @@ public abstract class GeneratedDriver extends GenericItem
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Driver.vehicle</code> attribute. 
-	 * @param value the vehicle
+	 * @param value the vehicle - Vehicle
 	 */
 	public void setVehicle(final Vehicle value)
 	{

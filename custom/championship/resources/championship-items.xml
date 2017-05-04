@@ -1,163 +1,197 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2000-2013 hybris AG
+ All rights reserved.
+
+ This software is the confidential and proprietary information of hybris
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with hybris.
+
+  
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
 
 <items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:noNamespaceSchemaLocation="items.xsd">
-
-
-	<collectiontypes>
-		<collectiontype code="DriverList" elementtype="Driver" autocreate="true" generate="true" type="list" />
-	</collectiontypes>
-
-	<enumtypes>
-		<enumtype code="TypeEnum" autocreate="true" generate="true" dynamic="false">
-			<value code="CAR" />
-			<value code="MCYCLE" />
-		</enumtype>
-	</enumtypes>
-
-	<relations>
-		<relation code="RaceGranPrixRelation" localized="false" generate="true" autocreate="true">
-			<sourceElement type="RaceChampionship" qualifier="raceChampionship" cardinality="one" />
-			<targetElement type="GranPrix" qualifier="granPrix" cardinality="many" />
-		</relation>
-		<relation code="RaceDriverRelation" localized="false" generate="true" autocreate="true">
-			<sourceElement type="RaceChampionship" qualifier="raceChampionship" cardinality="one" />
-			<targetElement type="Driver" qualifier="drivers" cardinality="many" />
-		</relation>
-		<relation code="GranPrixPlacingRelation" localized="false" generate="true" autocreate="true">
-			<sourceElement type="GranPrix" qualifier="granPrix" cardinality="one" />
-			<targetElement type="Placing" qualifier="placings" cardinality="many" />
-		</relation>
-		<relation code="DriverPlacingRelation" localized="false" generate="true" autocreate="true">
-			<sourceElement type="Driver" qualifier="driver" cardinality="one" />
-			<targetElement type="Placing" qualifier="placings" cardinality="many" />
-		</relation>
-	</relations>
-
-	<itemtypes>
-		<itemtype code="Vehicle" generate="true" autocreate="true">
-			<deployment table="Vehicle" typecode="10001" />
-			<attributes>
-				<attribute qualifier="code" type="java.lang.String">
-					<persistence type="property"/>
-					<modifiers optional="false" unique="true"/>					
-				</attribute>
-				<attribute qualifier="name" type="java.lang.String">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="type" type="TypeEnum">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="hp" type="java.lang.Integer">
-					<description>Horse power</description>
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="engineSize" type="java.lang.Integer">
-					<persistence type="property"/>			
-				</attribute>
-			</attributes>
-		</itemtype>
-
-		<itemtype code="Stable" generate="true" autocreate="true">
-			<deployment table="Stable" typecode="10002" />
-			<attributes>
-				<attribute qualifier="code" type="java.lang.String">
-					<persistence type="property"/>
-					<modifiers optional="false" unique="true"/>					
-				</attribute>
-				<attribute qualifier="name" type="java.lang.String">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="nation" type="java.lang.String">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="drivers" type="DriverList">
-					<persistence type="property" />
-				</attribute>
-			</attributes>
-		</itemtype>
-
-		<itemtype code="GranPrix" generate="true" autocreate="true">
-			<deployment table="GranPrix" typecode="10003" />
-			<attributes>
-				<attribute qualifier="code" type="java.lang.String">
-					<persistence type="property"/>
-					<modifiers optional="false" unique="true"/>					
-				</attribute>
-				<attribute qualifier="name" type="java.lang.String">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="laps" type="java.lang.Integer">
-					<description>Number of laps</description>
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="date" type="java.lang.String"> <!--TODO da validare con interceptor-->
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="nation" type="java.lang.String">
-					<persistence type="property"/>			
-				</attribute>
-			</attributes>
-		</itemtype>
-
-		<itemtype code="RaceChampionship" generate="true" autocreate="true">
-			<deployment table="RaceChampionship" typecode="10004" />
-			<attributes>
-				<attribute qualifier="code" type="java.lang.String">
-					<persistence type="property"/>
-					<modifiers optional="false" unique="true"/>					
-				</attribute>
-				<attribute qualifier="name" type="java.lang.String">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="type" type="TypeEnum">
-					<persistence type="property"/>			
-				</attribute>
-			</attributes>
-		</itemtype>		
-
-		<itemtype code="Placing" generate="true" autocreate="true">
-			<deployment table="Placing" typecode="10005" />
-			<attributes>
-				<attribute qualifier="code" type="java.lang.String">
-					<persistence type="property"/>
-					<modifiers optional="false" unique="true"/>					
-				</attribute>
-				<attribute qualifier="time" type="java.lang.Integer">
-					<description>Driver's time</description>
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="position" type="java.lang.Integer">
-					<description>Driver's position</description>
-					<persistence type="property"/>			
-				</attribute>
-			</attributes>
-		</itemtype>
-
-		<itemtype code="Driver" generate="true" autocreate="true">
-			<deployment table="Driver" typecode="10006" />
-			<attributes>
-				<attribute qualifier="code" type="java.lang.String">
-					<persistence type="property"/>
-					<modifiers optional="false" unique="true"/>					
-				</attribute>
-				<attribute qualifier="name" type="java.lang.String">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="surname" type="java.lang.String">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="nationality" type="java.lang.String">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="age" type="java.lang.Integer">
-					<persistence type="property"/>			
-				</attribute>
-				<attribute qualifier="vehicle" type="Vehicle">
-					<persistence type="property"/>			
-				</attribute>
-			</attributes>
-		</itemtype>
-
-	</itemtypes>
+			xsi:noNamespaceSchemaLocation="items.xsd">
+			
+		<enumtypes>
+	        <enumtype code="TypeEnum" autocreate="true" generate="true" dynamic="false">
+	            <value code="CAR"/>
+	            <value code="MOTO"/>
+	        </enumtype>
+		</enumtypes>
+	
+		<relations>
+		    <relation code="RaceGranPrixRelation" localized="false" generate="true" autocreate="true">
+		       <sourceElement type="RaceChampionship" qualifier="raceChampionship" cardinality="one" />
+		       <targetElement type="GranPrix" qualifier="granPrix" cardinality="many"/>
+		    </relation>
+		    <relation code="RaceDriverRelation" localized="false" generate="true" autocreate="true">
+		       <sourceElement type="RaceChampionship" qualifier="raceChampionship" cardinality="one" />
+		       <targetElement type="Driver" qualifier="drivers" cardinality="many"/>
+		    </relation>
+		    <relation code="PlacingGranPrixRelation" localized="false" generate="true" autocreate="true">
+		       <sourceElement type="GranPrix" qualifier="granPrix" cardinality="one" />
+		       <targetElement type="Placing" qualifier="placings" cardinality="many"/>
+		    </relation>
+		</relations>
+		
+		<itemtypes>
+	        <itemtype code="Vehicle" generate="true" autocreate="true">
+	            <deployment table="Vehicle" typecode="10501" />
+	            <attributes>
+	                <attribute qualifier="code" type="java.lang.String" >
+	                    <persistence type="property"/>
+	                    <modifiers optional="false" unique="true"/>
+	                </attribute>
+	                <attribute qualifier="name" type="java.lang.String">
+	                    <description>Name</description>
+	                    <persistence type="property"/>
+	                </attribute>
+	                <attribute type="TypeEnum" qualifier="type">
+    					<persistence type="property"/>
+    					<defaultvalue>em().getEnumerationValue("TypeEnum","CAR")</defaultvalue>
+					</attribute>
+					<attribute qualifier="number" type="java.lang.Integer">
+	                    <description>Number</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="hp" type="java.lang.Integer">
+	                    <description>Horse Power</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="engineSize" type="java.lang.Integer">
+	                    <description>Engine Size</description>
+	                    <persistence type="property" />
+	                </attribute>
+	            </attributes>
+	        </itemtype>
+	        
+	        <itemtype code="Stable" generate="true" autocreate="true">
+	            <deployment table="Stable" typecode="10502" />
+	            <attributes>
+	                <attribute qualifier="code" type="java.lang.String" >
+	                    <persistence type="property"/>
+	                    <modifiers optional="false" unique="true"/>
+	                </attribute>
+	                <attribute qualifier="name" type="java.lang.String">
+	                    <description>Name</description>
+	                    <persistence type="property"/>
+	                </attribute>
+	                <attribute qualifier="nation" type="java.lang.String">
+	                    <description>Nation</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="firstVehicle" type="Vehicle">
+	                    <description>First Vehicle Team</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="secondVehicle" type="Vehicle">
+	                    <description>Second Vehicle Team</description>
+	                    <persistence type="property" />
+	                </attribute>
+	            </attributes>
+	        </itemtype>
+	        
+	        <itemtype code="GranPrix" generate="true" autocreate="true">
+	            <deployment table="GranPrix" typecode="10503" />
+	            <attributes>
+	                <attribute qualifier="code" type="java.lang.String" >
+	                    <persistence type="property"/>
+	                    <modifiers optional="false" unique="true"/>
+	                </attribute>
+	                <attribute qualifier="name" type="java.lang.String">
+	                    <description>Name</description>
+	                    <persistence type="property"/>
+	                </attribute>
+	                <attribute qualifier="laps" type="java.lang.Integer">
+	                    <description>Laps</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="date" type="java.util.Date">
+	                    <description>Date</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="nation" type="java.lang.String">
+	                    <description>Nation</description>
+	                    <persistence type="property"/>
+	                </attribute>
+	            </attributes>
+	        </itemtype>
+	        
+	        <itemtype code="RaceChampionship" generate="true" autocreate="true">
+	            <deployment table="RaceChampionship" typecode="10504" />
+	            <attributes>
+	                <attribute qualifier="code" type="java.lang.String" >
+	                    <persistence type="property"/>
+	                    <modifiers optional="false" unique="true"/>
+	                </attribute>
+	                <attribute type="TypeEnum" qualifier="type">
+    					<persistence type="property"/>
+    					<defaultvalue>em().getEnumerationValue("TypeEnum","CAR")</defaultvalue>
+					</attribute>
+	                <attribute qualifier="name" type="java.lang.String">
+	                    <description>Name</description>
+	                    <persistence type="property" />
+	                </attribute>
+	            </attributes>
+	    	</itemtype>
+	    	
+	    	<itemtype code="Placing" generate="true" autocreate="true">
+	            <deployment table="Placing" typecode="10505" />
+	            <attributes>
+	                <attribute qualifier="code" type="java.lang.String" >
+	                    <persistence type="property"/>
+	                    <modifiers optional="false" unique="true"/>
+	                </attribute>
+					<attribute qualifier="time" type="java.lang.String">
+	                    <description>Time</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="position" type="java.lang.Integer">
+	                    <description>Position</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="driver" type="Driver">
+	                    <description>Driver</description>
+	                    <persistence type="property" />
+	                </attribute>
+	            </attributes>
+	    	</itemtype>
+	    	
+	    	<itemtype code="Driver" generate="true" autocreate="true">
+	            <deployment table="Driver" typecode="10506" />
+	            <attributes>
+	                <attribute qualifier="code" type="java.lang.String" >
+	                    <persistence type="property"/>
+	                    <modifiers optional="false" unique="true"/>
+	                </attribute>
+					<attribute qualifier="name" type="java.lang.String">
+	                    <description>Name</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="surname" type="java.lang.String">
+	                    <description>Surname</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="nationality" type="java.lang.String">
+	                    <description>Nationality</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="age" type="java.lang.Integer">
+	                    <description>Age</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="vehicle" type="Vehicle">
+	                    <description>Vehicle</description>
+	                    <persistence type="property" />
+	                </attribute>
+	            </attributes>
+	    	</itemtype>
+	    </itemtypes>
 </items>
