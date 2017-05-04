@@ -1,24 +1,18 @@
 package it.gruppofanta.championship.daos.impl;
 
-import de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException;
-import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import it.gruppofanta.championship.daos.RaceChampionshipDao;
-import it.gruppofanta.championship.model.GranPrixModel;
 import it.gruppofanta.championship.model.RaceChampionshipModel;
 
 
-@Component(value = "RaceChampionshipDAO")
+@Component(value = "raceChampionshipDAO")
 public class DefaultRaceChampionshipDao implements RaceChampionshipDao
 {
 
@@ -44,29 +38,6 @@ public class DefaultRaceChampionshipDao implements RaceChampionshipDao
 		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		query.addQueryParameter("code", code);
 		return flexibleSearchService.<RaceChampionshipModel> search(query).getResult();
-	}
-
-	@Override
-	public List<Date> retrieveGranPrixCalendar(final String code)
-	{
-		final List<RaceChampionshipModel> raceChampionships = findRaceChampionshipsByCode(code);
-		if (raceChampionships.isEmpty())
-		{
-			throw new UnknownIdentifierException("RaceChampionship with code '" + code + "' not found!");
-		}
-		else if (raceChampionships.size() > 1)
-		{
-			throw new AmbiguousIdentifierException(
-					"RaceChampionship code '" + code + "' is not unique, " + raceChampionships.size() + " stadiums found!");
-		}
-		final RaceChampionshipModel result = raceChampionships.get(0);
-		final List<Date> toReturn = new LinkedList<Date>();
-		final Collection<GranPrixModel> granPrix = result.getGranPrix();
-		for (final GranPrixModel granPrixModel : granPrix)
-		{
-			toReturn.add(granPrixModel.getDate());
-		}
-		return toReturn;
 	}
 
 }

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 4-mag-2017 16.43.58                         ---
+ * --- Generated at 4-mag-2017 22.37.23                         ---
  * ----------------------------------------------------------------
  */
 package it.gruppofanta.championship.jalo;
@@ -14,7 +14,9 @@ import de.hybris.platform.jalo.type.CollectionType;
 import de.hybris.platform.util.OneToManyHandler;
 import it.gruppofanta.championship.constants.ChampionshipConstants;
 import it.gruppofanta.championship.jalo.Driver;
+import it.gruppofanta.championship.jalo.DriverRanking;
 import it.gruppofanta.championship.jalo.GranPrix;
+import it.gruppofanta.championship.jalo.StableRanking;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -32,6 +34,10 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 	public static final String TYPE = "type";
 	/** Qualifier of the <code>RaceChampionship.name</code> attribute **/
 	public static final String NAME = "name";
+	/** Qualifier of the <code>RaceChampionship.stableRanking</code> attribute **/
+	public static final String STABLERANKING = "stableRanking";
+	/** Qualifier of the <code>RaceChampionship.driverRanking</code> attribute **/
+	public static final String DRIVERRANKING = "driverRanking";
 	/** Qualifier of the <code>RaceChampionship.granPrix</code> attribute **/
 	public static final String GRANPRIX = "granPrix";
 	/** Qualifier of the <code>RaceChampionship.drivers</code> attribute **/
@@ -67,6 +73,8 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 		tmp.put(CODE, AttributeMode.INITIAL);
 		tmp.put(TYPE, AttributeMode.INITIAL);
 		tmp.put(NAME, AttributeMode.INITIAL);
+		tmp.put(STABLERANKING, AttributeMode.INITIAL);
+		tmp.put(DRIVERRANKING, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
@@ -109,6 +117,42 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 	public void setCode(final String value)
 	{
 		setCode( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>RaceChampionship.driverRanking</code> attribute.
+	 * @return the driverRanking - Driver Ranking
+	 */
+	public DriverRanking getDriverRanking(final SessionContext ctx)
+	{
+		return (DriverRanking)getProperty( ctx, DRIVERRANKING);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>RaceChampionship.driverRanking</code> attribute.
+	 * @return the driverRanking - Driver Ranking
+	 */
+	public DriverRanking getDriverRanking()
+	{
+		return getDriverRanking( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>RaceChampionship.driverRanking</code> attribute. 
+	 * @param value the driverRanking - Driver Ranking
+	 */
+	public void setDriverRanking(final SessionContext ctx, final DriverRanking value)
+	{
+		setProperty(ctx, DRIVERRANKING,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>RaceChampionship.driverRanking</code> attribute. 
+	 * @param value the driverRanking - Driver Ranking
+	 */
+	public void setDriverRanking(final DriverRanking value)
+	{
+		setDriverRanking( getSession().getSessionContext(), value );
 	}
 	
 	/**
@@ -289,6 +333,42 @@ public abstract class GeneratedRaceChampionship extends GenericItem
 	public void setName(final String value)
 	{
 		setName( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>RaceChampionship.stableRanking</code> attribute.
+	 * @return the stableRanking - Stable Ranking
+	 */
+	public StableRanking getStableRanking(final SessionContext ctx)
+	{
+		return (StableRanking)getProperty( ctx, STABLERANKING);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>RaceChampionship.stableRanking</code> attribute.
+	 * @return the stableRanking - Stable Ranking
+	 */
+	public StableRanking getStableRanking()
+	{
+		return getStableRanking( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>RaceChampionship.stableRanking</code> attribute. 
+	 * @param value the stableRanking - Stable Ranking
+	 */
+	public void setStableRanking(final SessionContext ctx, final StableRanking value)
+	{
+		setProperty(ctx, STABLERANKING,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>RaceChampionship.stableRanking</code> attribute. 
+	 * @param value the stableRanking - Stable Ranking
+	 */
+	public void setStableRanking(final StableRanking value)
+	{
+		setStableRanking( getSession().getSessionContext(), value );
 	}
 	
 	/**

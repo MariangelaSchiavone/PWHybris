@@ -39,6 +39,14 @@
 		       <sourceElement type="GranPrix" qualifier="granPrix" cardinality="one" />
 		       <targetElement type="Placing" qualifier="placings" cardinality="many"/>
 		    </relation>
+		     <relation code="DriverRankingEntryRelation" localized="false" generate="true" autocreate="true">
+		       <sourceElement type="DriverRanking" qualifier="driverRanking" cardinality="one" />
+		       <targetElement type="DriverEntry" qualifier="driversEntry" cardinality="many"/>
+		    </relation>
+		    <relation code="StableRankingEntryRelation" localized="false" generate="true" autocreate="true">
+		       <sourceElement type="StableRanking" qualifier="stableRanking" cardinality="one" />
+		       <targetElement type="StableEntry" qualifier="stablesEntry" cardinality="many"/>
+		    </relation>
 		</relations>
 		
 		<itemtypes>
@@ -139,6 +147,14 @@
 	                    <description>Name</description>
 	                    <persistence type="property" />
 	                </attribute>
+	                <attribute qualifier="stableRanking" type="StableRanking">
+	                    <description>Stable Ranking</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="driverRanking" type="DriverRanking">
+	                    <description>Driver Ranking</description>
+	                    <persistence type="property" />
+	                </attribute>
 	            </attributes>
 	    	</itemtype>
 	    	
@@ -193,5 +209,74 @@
 	                </attribute>
 	            </attributes>
 	    	</itemtype>
+	    	
+	    	<itemtype code="DriverEntry" generate="true" autocreate="true">
+	  			<deployment table="DriverEntry" typecode="10507" />
+	  			<attributes>
+	  				<attribute qualifier="code" type="java.lang.String">
+	                    <description>Code</description>
+	                    <persistence type="property" />
+	                    <modifiers optional="false" unique="true"/>	                    
+	                </attribute>
+	                <attribute qualifier="position" type="java.lang.Integer">
+	                    <description>Position</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="points" type="java.lang.Integer">
+	                    <description>Points</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="driver" type="Driver">
+	                    <description>Driver</description>
+	                    <persistence type="property" />
+	                </attribute>
+	  			</attributes> 	
+	    	</itemtype>
+	    
+			<itemtype code="StableEntry" generate="true" autocreate="true">
+				<deployment table="StableEntry" typecode="10508" />
+				<attributes>
+					<attribute qualifier="code" type="java.lang.String">
+	                    <description>Code</description>
+	                    <persistence type="property" />
+	                    <modifiers optional="false" unique="true"/>	                    
+	                </attribute>
+	                <attribute qualifier="position" type="java.lang.Integer">
+	                    <description>Position</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="points" type="java.lang.Integer">
+	                    <description>Points</description>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="stable" type="Stable">
+	                    <description>Stable</description>
+	                    <persistence type="property" />
+	                </attribute>
+		  		</attributes> 	
+		    </itemtype>
+	    	
+	    	<itemtype code="StableRanking" generate="true" autocreate="true">
+				<deployment table="StableRanking" typecode="10509" />
+				<attributes>
+					<attribute qualifier="code" type="java.lang.String">
+	                    <description>Code</description>
+	                    <persistence type="property" />
+	                    <modifiers optional="false" unique="true"/>	                    
+	                </attribute>
+		  		</attributes> 	
+		    </itemtype>
+	    	
+	    	<itemtype code="DriverRanking" generate="true" autocreate="true">
+				<deployment table="DriverRanking" typecode="10510" />
+				<attributes>
+					<attribute qualifier="code" type="java.lang.String">
+	                    <description>Code</description>
+	                    <persistence type="property" />
+	                    <modifiers optional="false" unique="true"/>	                    
+	                </attribute>
+		  		</attributes> 	
+		    </itemtype>
+	    	
 	    </itemtypes>
 </items>

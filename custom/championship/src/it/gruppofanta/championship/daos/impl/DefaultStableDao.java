@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import it.gruppofanta.championship.daos.StableDao;
 import it.gruppofanta.championship.model.StableModel;
+import it.gruppofanta.championship.model.VehicleModel;
 
 
 @Component(value = "stableDAO")
@@ -33,6 +34,18 @@ public class DefaultStableDao implements StableDao
 				+ "WHERE " + "{p:" + StableModel.CODE + "}=?code ";
 		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		query.addQueryParameter("code", code);
+		return flexibleSearchService.<StableModel> search(query).getResult();
+	}
+
+	@Override
+	public List<StableModel> findStablesByVehicle(final VehicleModel vehicle)
+	{
+		final String queryString = "SELECT DISTINCT {p:" + StableModel.PK + "} FROM {" + StableModel._TYPECODE + " AS p}, {"
+				+ VehicleModel._TYPECODE + " AS v} "//
+				+ "WHERE " + "{p:" + StableModel.FIRSTVEHICLE + "}=?first OR {p:" + StableModel.SECONDVEHICLE + "}=?second";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+		query.addQueryParameter("first", vehicle.getPk());
+		query.addQueryParameter("second", vehicle.getPk());
 		return flexibleSearchService.<StableModel> search(query).getResult();
 	}
 
