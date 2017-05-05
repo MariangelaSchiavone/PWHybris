@@ -16,9 +16,9 @@
    <extension abstractclassprefix="Generated" classprefix="Championshiprace" managername="ChampionshipraceManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="championshiprace">
                
       <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->         
-      <!-- <requires-extension name="cms"/> -->         
+      <requires-extension name="championship"/>        
       
-
+		<requires-extension name="championship"/>
       <coremodule generated="true" manager="it.gruppofanta.championshiprace.jalo.ChampionshipraceManager" packageroot="it.gruppofanta.championshiprace"/>
 
       <webmodule jspcompile="false" webroot="/championshiprace"/>

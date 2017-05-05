@@ -1,4 +1,4 @@
-package it.gruppofanta.championship.services;
+package it.gruppofanta.championshiprace.services;
 
 import java.util.List;
 
