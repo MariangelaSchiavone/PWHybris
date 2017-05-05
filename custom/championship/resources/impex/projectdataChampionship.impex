@@ -1,25 +1,3 @@
-INSERT_UPDATE Driver	;code[unique=true]	;name			;surname		;nationality	;age	;vehicle(code)
-						;1					;Sebastian		;Vettel			;Germany		;28		;1
-						;2					;Kimi			;Raikkonen		;Finland		;34		;2
-						;3					;Lewis			;Hamilton		;Great Britain	;28		;3
-						;4					;Valtteri		;Bottas			;Finland		;27		;4
-						;5					;Daniel			;Ricciardo		;Australia		;25		;5
-						;6					;Max			;Verstappen		;Netherlands	;19		;6
-						;7					;Sergio			;Perez			;Mexico			;27		;7
-						;8					;Esteban		;Ocon			;Mexico			;21		;8
-						;9					;Fernando		;Alonso			;Spain			;34		;9
-						;10					;Stoffel		;Vandoorne		;Belgium		;24		;10
-						;11					;Valentino		;Rossi			;Italy			;35		;11
-						;12					;Maverick		;Vinales		;Spain			;23		;12
-						;13					;Marc			;Marquez		;Spain			;24		;13
-						;14					;Daniel			;Pedrosa		;Spain			;33		;14
-						;15					;Jorge			;Lorenzo		;Spain			;29		;15
-						;16					;Andrea			;Dovizioso		;Italy			;30		;16
-						;17					;Andrea			;Iannone		;Italy			;27		;17
-						;18					;Alex			;Rins			;Spain			;23		;18
-						;19					;Johann			;Zarco			;France			;28		;19
-						;20					;Jonas			;Folger			;Germany		;26		;20
-
 INSERT_UPDATE Vehicle	;code[unique=true]	;name					;type(code)	;hp		;engineSize		;number
 						;1					;Ferrari				;CAR		;730	;2400			;5
 						;2					;Ferrari				;CAR		;730	;2400			;7
@@ -42,6 +20,28 @@ INSERT_UPDATE Vehicle	;code[unique=true]	;name					;type(code)	;hp		;engineSize	
 						;19					;Yahama R1 2016			;MOTO		;250	;1000			;5
 						;20					;Yahama R1 2016			;MOTO		;250	;1000			;94
 
+INSERT_UPDATE Driver	;code[unique=true]	;name			;surname		;nationality	;age	;vehicle(code)
+						;1					;Sebastian		;Vettel			;Germany		;28		;1
+						;2					;Kimi			;Raikkonen		;Finland		;34		;2
+						;3					;Lewis			;Hamilton		;Great Britain	;28		;3
+						;4					;Valtteri		;Bottas			;Finland		;27		;4
+						;5					;Daniel			;Ricciardo		;Australia		;25		;5
+						;6					;Max			;Verstappen		;Netherlands	;19		;6
+						;7					;Sergio			;Perez			;Mexico			;27		;7
+						;8					;Esteban		;Ocon			;Mexico			;21		;8
+						;9					;Fernando		;Alonso			;Spain			;34		;9
+						;10					;Stoffel		;Vandoorne		;Belgium		;24		;10
+						;11					;Valentino		;Rossi			;Italy			;35		;11
+						;12					;Maverick		;Vinales		;Spain			;23		;12
+						;13					;Marc			;Marquez		;Spain			;24		;13
+						;14					;Daniel			;Pedrosa		;Spain			;33		;14
+						;15					;Jorge			;Lorenzo		;Spain			;29		;15
+						;16					;Andrea			;Dovizioso		;Italy			;30		;16
+						;17					;Andrea			;Iannone		;Italy			;27		;17
+						;18					;Alex			;Rins			;Spain			;23		;18
+						;19					;Johann			;Zarco			;France			;28		;19
+						;20					;Jonas			;Folger			;Germany		;26		;20
+
 INSERT_UPDATE Stable	;code[unique=true]	;name					;nation			;firstVehicle(code)	;secondVehicle(code)
 						;1					;Scuderia Ferrari		;Italy			;1					;2
 						;2					;Mercedes AMG			;Germany		;3					;4
@@ -54,232 +54,230 @@ INSERT_UPDATE Stable	;code[unique=true]	;name					;nation			;firstVehicle(code)	
 						;9					;Team Suzuki Ecstar		;Japan			;17					;18
 						;10					;Monster Yamaha Tech 3	;Japan			;19					;20
 
-INSERT_UPDATE GranPrix	;code[unique=true]	;name						;laps	;date[dateformat=yyyy-MM-dd HH:mm]	;nation
-						;1					;Gran Premio di Monza		;58		;2017-08-05 14:00					;Italy
-						;2					;SPA Francochamps			;47		;2017-07-27 14:00					;Belgium
-						;3					;Albert Park Melbourne		;67		;2017-02-14 14:00					;Australia
-						;4					;Nurburgring				;72		;2017-05-18 14:00					;Germany
-						;5					;Gran Prix de Barcelona		;78		;2017-04-07 14:00					;Spain
-						;6					;Silverstone				;69		;2017-06-21 14:00					;Great Britain
-						;7					;Suzuka						;54		;2017-09-10 14:00					;Japan
-						;8					;A1 Ring Spielberg			;76		;2017-05-28 14:00					;Austria
-						;9					;Grand Prix de Monte Carlo	;78		;2017-04-21 14:00					;Monaco
-						;10					;Hungaroring				;71		;2017-05-10 14:00					;Hungary
-						;11					;Mugello					;24		;2017-05-04 14:00					;Italy
-						;12					;Le Mans					;23		;2017-05-11 14:00					;France
-						;13					;Laguna Seca				;25		;2017-07-15 14:00					;United States
-						;14					;Jerez de la Frontera		;27		;2017-04-12 14:00					;Spain
-						;15					;Brno						;22		;2017-07-28 14:00					;Czech Republic
-						;16					;Aragon GP					;28		;2017-08-15 14:00					;Spain
-						;17					;Phillip Island				;26		;2017-10-22 14:00					;Australia
-						;18					;Donington					;23		;2017-03-21 14:00					;Great Britain
-						;19					;Termas de Rio Hondo		;26		;2017-03-12 14:00					;Argentina
-						;20					;Assen						;20		;2017-04-01 14:00					;Netherlands
+INSERT_UPDATE Placing	;code[unique=true]	;driver(code)	;time			;position
+						;1					;1				;1h 38m 45s		;1
+						;2					;2				;+5s			;2
+						;3					;3				;+12s			;3
+						;4					;5				;+17s			;4
+						;5					;6				;+18s			;5
+						;6					;4				;+25s			;6
+						;7					;9				;+34s			;7
+						;8					;8				;+1Lap			;8
+						;9					;7				;Retired		;9
+						;10					;10				;Retired		;10
+						;11					;3				;1h 45m 21s		;1
+						;12					;1				;+5s			;2
+						;13					;4				;+12s			;3
+						;14					;5				;+17s			;4
+						;15					;2				;+18s			;5
+						;16					;6				;+25s			;6
+						;17					;8				;+34s			;7
+						;18					;9				;+1Lap			;8
+						;19					;7				;+1Lap			;9
+						;20					;10				;Retired		;10
+						;21					;1				;1h 25m 05s		;1
+						;22					;3				;+5s			;2
+						;23					;2				;+12s			;3
+						;24					;4				;+17s			;4
+						;25					;6				;+18s			;5
+						;26					;5				;+25s			;6
+						;27					;9				;+34s			;7
+						;28					;8				;+1Lap			;8
+						;29					;7				;Retired		;9
+						;30					;10				;Retired		;10
+						;31					;5				;1h 19m 55s		;1
+						;32					;4				;+3s			;2
+						;33					;2				;+5s			;3
+						;34					;3				;+9s			;4
+						;35					;1				;+18s			;5
+						;36					;6				;+25s			;6
+						;37					;9				;+34s			;7
+						;38					;8				;Retired		;8
+						;39					;7				;Retired		;9
+						;40					;10				;Retired		;10
+						;41					;1				;1h 55m 23s		;1
+						;42					;4				;+3s			;2
+						;43					;3				;+5s			;3
+						;44					;2				;+9s			;4
+						;45					;6				;+18s			;5
+						;46					;9				;+25s			;6
+						;47					;5				;+34s			;7
+						;48					;8				;Retired		;8
+						;49					;7				;Retired		;9
+						;50					;10				;Retired		;10
+						;51					;1				;1h 16m 45s		;1
+						;52					;3				;+4s			;2
+						;53					;2				;+8s			;3
+						;54					;5				;+11s			;4
+						;55					;9				;+42s			;5
+						;56					;4				;+1m 4s			;6
+						;57					;6				;+1m 24s		;7
+						;58					;7				;+1Lap			;8
+						;59					;10				;+1Lap			;9
+						;60					;8				;+1Lap			;10
+						;61					;1				;1h 58m 4s		;1
+						;62					;2				;+4s			;2
+						;63					;3				;+8s			;3
+						;64					;5				;+11s			;4
+						;65					;10				;+42s			;5
+						;66					;4				;+1m 4s			;6
+						;67					;6				;+1m 24s		;7
+						;68					;9				;+1Lap			;8
+						;69					;7				;+1Lap			;9
+						;70					;8				;+1Lap			;10
+						;71					;2				;1h 44m 44s		;1
+						;72					;9				;+4s			;2
+						;73					;1				;+8s			;3
+						;74					;5				;+11s			;4
+						;75					;3				;+42s			;5
+						;76					;4				;+1m 4s			;6
+						;77					;6				;+1m 24s		;7
+						;78					;7				;+1Lap			;8
+						;79					;10				;+1Lap			;9
+						;80					;8				;+1Lap			;10
+						;81					;3				;1h 11m 53s		;1
+						;82					;4				;+4s			;2
+						;83					;2				;+8s			;3
+						;84					;5				;+11s			;4
+						;85					;9				;+42s			;5
+						;86					;1				;+1m 4s			;6
+						;87					;6				;+1m 24s		;7
+						;88					;7				;+1Lap			;8
+						;89					;10				;+1Lap			;9
+						;90					;8				;+1Lap			;10
+						;91					;1				;1h 45m 7s		;1
+						;92					;2				;+4s			;2
+						;93					;3				;+8s			;3
+						;94					;8				;+11s			;4
+						;95					;9				;+42s			;5
+						;96					;4				;+1m 4s			;6
+						;97					;6				;+1m 24s		;7
+						;98					;7				;+1Lap			;8
+						;99					;10				;+1Lap			;9
+						;100				;5				;Retired		;10
+						;101				;11				;28m 45s		;1
+						;102				;12				;+5s			;2
+						;103				;13				;+12s			;3
+						;104				;15				;+17s			;4
+						;105				;16				;+18s			;5
+						;106				;14				;+25s			;6
+						;107				;19				;+34s			;7
+						;108				;18				;+1Lap			;8
+						;109				;17				;Retired		;9
+						;110				;20				;Retired		;10
+						;111				;13				;25m 21s		;1
+						;112				;11				;+5s			;2
+						;113				;14				;+12s			;3
+						;114				;15				;+17s			;4
+						;115				;12				;+18s			;5
+						;116				;16				;+25s			;6
+						;117				;18				;+34s			;7
+						;118				;19				;+1Lap			;8
+						;119				;17				;+1Lap			;9
+						;120				;20				;Retired		;10
+						;121				;11				;23m 05s		;1
+						;122				;13				;+5s			;2
+						;123				;12				;+12s			;3
+						;124				;14				;+17s			;4
+						;125				;16				;+18s			;5
+						;126				;15				;+25s			;6
+						;127				;19				;+34s			;7
+						;128				;18				;+1Lap			;8
+						;129				;17				;Retired		;9
+						;130				;20				;Retired		;10
+						;131				;15				;29m 55s		;1
+						;132				;14				;+3s			;2
+						;133				;12				;+5s			;3
+						;134				;13				;+9s			;4
+						;135				;11				;+18s			;5
+						;136				;16				;+25s			;6
+						;137				;19				;+34s			;7
+						;138				;18				;Retired		;8
+						;139				;17				;Retired		;9
+						;140				;20				;Retired		;10
+						;141				;11				;25m 23s		;1
+						;142				;14				;+3s			;2
+						;143				;13				;+5s			;3
+						;144				;12				;+9s			;4
+						;145				;16				;+18s			;5
+						;146				;19				;+25s			;6
+						;147				;15				;+34s			;7
+						;148				;18				;Retired		;8
+						;149				;17				;Retired		;9
+						;150				;20				;Retired		;10
+						;151				;16				;26m 45s		;1
+						;152				;13				;+4s			;2
+						;153				;12				;+8s			;3
+						;154				;11				;+11s			;4
+						;155				;19				;+42s			;5
+						;156				;14				;+1m 4s			;6
+						;157				;15				;+1m 24s		;7
+						;158				;17				;+1Lap			;8
+						;159				;20				;+1Lap			;9
+						;160				;18				;+1Lap			;10
+						;161				;13				;28m 4s			;1
+						;162				;12				;+4s			;2
+						;163				;14				;+8s			;3
+						;164				;15				;+11s			;4
+						;165				;20				;+42s			;5
+						;166				;11				;+1m 4s			;6
+						;167				;16				;+1m 24s		;7
+						;168				;19				;+1Lap			;8
+						;169				;17				;+1Lap			;9
+						;170				;18				;+1Lap			;10
+						;171				;12				;24m 44s		;1
+						;172				;19				;+4s			;2
+						;173				;11				;+8s			;3
+						;174				;15				;+11s			;4
+						;175				;13				;+42s			;5
+						;176				;14				;+1m 4s			;6
+						;177				;16				;+1m 24s		;7
+						;178				;17				;+1Lap			;8
+						;179				;20				;+1Lap			;9
+						;180				;18				;+1Lap			;10
+						;181				;13				;21m 53s		;1
+						;182				;14				;+4s			;2
+						;183				;12				;+8s			;3
+						;184				;15				;+11s			;4
+						;185				;19				;+42s			;5
+						;186				;11				;+1m 4s			;6
+						;187				;16				;+1m 24s		;7
+						;188				;17				;+1Lap			;8
+						;189				;20				;+1Lap			;9
+						;190				;18				;+1Lap			;10
+						;191				;11				;25m 7s			;1
+						;192				;12				;+4s			;2
+						;193				;13				;+8s			;3
+						;194				;18				;+11s			;4
+						;195				;19				;+42s			;5
+						;196				;14				;+1m 4s			;6
+						;197				;16				;+1m 24s		;7
+						;198				;17				;+1Lap			;8
+						;199				;20				;+1Lap			;9
+						;200				;15				;Retired		;10
 
+INSERT_UPDATE GranPrix	;code[unique=true]	;name						;laps	;date[dateformat=yyyy-MM-dd HH:mm]	;nation 			;placings(code)
+						;1					;Gran Premio di Monza		;58		;2017-08-05 14:00					;Italy				;1,2,3,4,5,6,7,8,9,10
+						;2					;SPA Francochamps			;47		;2017-07-27 14:00					;Belgium			;11,12,13,14,15,16,17,18,19,20
+						;3					;Albert Park Melbourne		;67		;2017-02-14 14:00					;Australia			;21,22,23,24,25,26,27,28,29,30
+						;4					;Nurburgring				;72		;2017-05-18 14:00					;Germany			;31,32,33,34,35,36,37,38,39,40
+						;5					;Gran Prix de Barcelona		;78		;2017-04-07 14:00					;Spain				;41,42,43,44,45,46,47,48,49,50
+						;6					;Silverstone				;69		;2017-06-21 14:00					;Great Britain		;51,52,53,54,55,56,57,58,59,60
+						;7					;Suzuka						;54		;2017-09-10 14:00					;Japan				;61,62,63,64,65,66,67,68,69,70
+						;8					;A1 Ring Spielberg			;76		;2017-05-28 14:00					;Australia 			;71,72,73,74,75,76,77,78,79,80
+						;9					;Grand Prix de Monte Carlo	;78		;2017-04-21 14:00					;Monaco				;81,82,83,84,85,86,87,88,89,90
+						;10					;Hungaroring				;71		;2017-05-10 14:00					;Hungary			;91,92,93,94,95,96,97,98,99,100
+						;11					;Mugello					;24		;2017-05-04 14:00					;Italy				;101,102,103,104,105,106,107,108,109,110
+						;12					;Le Mans					;23		;2017-05-11 14:00					;France				;111,112,113,114,115,116,117,118,119,120
+						;13					;Laguna Seca				;25		;2017-07-15 14:00					;United States		;121,122,123,124,125,126,127,128,129,130
+						;14					;Jerez de la Frontera		;27		;2017-04-12 14:00					;Spain				;131,132,133,134,135,136,137,138,139,140
+						;15					;Brno						;22		;2017-07-28 14:00					;Czech Republic		;141,142,143,144,145,146,147,148,149,150
+						;16					;Aragon GP					;28		;2017-08-15 14:00					;Spain				;151,152,153,154,155,156,157,158,159,160
+						;17					;Phillip Island				;26		;2017-10-22 14:00					;Australia			;161,162,163,164,165,166,167,168,169,170
+						;18					;Donington					;23		;2017-03-21 14:00					;Great Britain		;171,172,173,174,175,176,177,178,179,180
+						;19					;Termas de Rio Hondo		;26		;2017-03-12 14:00					;Argentina			;181,182,183,184,185,186,187,188,189,190
+						;20					;Assen						;20		;2017-04-01 14:00					;Netherlands		;191,192,193,194,195,196,197,198,199,200
 
-INSERT_UPDATE Placing	;code[unique=true]	;granPrix(code)	;driver(code)	;time			;position
-						;1					;1				;1				;1h 38m 45s		;1
-						;2					;1				;2				;+5s			;2
-						;3					;1				;3				;+12s			;3
-						;4					;1				;5				;+17s			;4
-						;5					;1				;6				;+18s			;5
-						;6					;1				;4				;+25s			;6
-						;7					;1				;9				;+34s			;7
-						;8					;1				;8				;+1Lap			;8
-						;9					;1				;7				;Retired		;9
-						;10					;1				;10				;Retired		;10
-						;11					;2				;3				;1h 45m 21s		;1
-						;12					;2				;1				;+5s			;2
-						;13					;2				;4				;+12s			;3
-						;14					;2				;5				;+17s			;4
-						;15					;2				;2				;+18s			;5
-						;16					;2				;6				;+25s			;6
-						;17					;2				;8				;+34s			;7
-						;18					;2				;9				;+1Lap			;8
-						;19					;2				;7				;+1Lap			;9
-						;20					;9				;10				;Retired		;10
-						;21					;3				;1				;1h 25m 05s		;1
-						;22					;3				;3				;+5s			;2
-						;23					;3				;2				;+12s			;3
-						;24					;3				;4				;+17s			;4
-						;25					;3				;6				;+18s			;5
-						;26					;3				;5				;+25s			;6
-						;27					;3				;9				;+34s			;7
-						;28					;3				;8				;+1Lap			;8
-						;29					;3				;7				;Retired		;9
-						;30					;3				;10				;Retired		;10
-						;31					;4				;5				;1h 19m 55s		;1
-						;32					;4				;4				;+3s			;2
-						;33					;4				;2				;+5s			;3
-						;34					;4				;3				;+9s			;4
-						;35					;4				;1				;+18s			;5
-						;36					;4				;6				;+25s			;6
-						;37					;4				;9				;+34s			;7
-						;38					;4				;8				;Retired		;8
-						;39					;4				;7				;Retired		;9
-						;40					;4				;10				;Retired		;10
-						;41					;5				;1				;1h 55m 23s		;1
-						;42					;5				;4				;+3s			;2
-						;43					;5				;3				;+5s			;3
-						;44					;5				;2				;+9s			;4
-						;45					;5				;6				;+18s			;5
-						;46					;5				;9				;+25s			;6
-						;47					;5				;5				;+34s			;7
-						;48					;5				;8				;Retired		;8
-						;49					;5				;7				;Retired		;9
-						;50					;5				;10				;Retired		;10
-						;51					;6				;1				;1h 16m 45s		;1
-						;52					;6				;3				;+4s			;2
-						;53					;6				;2				;+8s			;3
-						;54					;6				;5				;+11s			;4
-						;55					;6				;9				;+42s			;5
-						;56					;6				;4				;+1m 4s			;6
-						;57					;6				;6				;+1m 24s		;7
-						;58					;6				;7				;+1Lap			;8
-						;59					;6				;10				;+1Lap			;9
-						;60					;6				;8				;+1Lap			;10
-						;61					;7				;1				;1h 58m 4s		;1
-						;62					;7				;2				;+4s			;2
-						;63					;7				;3				;+8s			;3
-						;64					;7				;5				;+11s			;4
-						;65					;7				;10				;+42s			;5
-						;66					;7				;4				;+1m 4s			;6
-						;67					;7				;6				;+1m 24s		;7
-						;68					;7				;9				;+1Lap			;8
-						;69					;7				;7				;+1Lap			;9
-						;70					;7				;8				;+1Lap			;10
-						;71					;8				;2				;1h 44m 44s		;1
-						;72					;8				;9				;+4s			;2
-						;73					;8				;1				;+8s			;3
-						;74					;8				;5				;+11s			;4
-						;75					;8				;3				;+42s			;5
-						;76					;8				;4				;+1m 4s			;6
-						;77					;8				;6				;+1m 24s		;7
-						;78					;8				;7				;+1Lap			;8
-						;79					;8				;10				;+1Lap			;9
-						;80					;8				;8				;+1Lap			;10
-						;81					;9				;3				;1h 11m 53s		;1
-						;82					;9				;4				;+4s			;2
-						;83					;9				;2				;+8s			;3
-						;84					;9				;5				;+11s			;4
-						;85					;9				;9				;+42s			;5
-						;86					;9				;1				;+1m 4s			;6
-						;87					;9				;6				;+1m 24s		;7
-						;88					;9				;7				;+1Lap			;8
-						;89					;9				;10				;+1Lap			;9
-						;90					;9				;8				;+1Lap			;10
-						;91					;10				;1				;1h 45m 7s		;1
-						;92					;10				;2				;+4s			;2
-						;93					;10				;3				;+8s			;3
-						;94					;10				;8				;+11s			;4
-						;95					;10				;9				;+42s			;5
-						;96					;10				;4				;+1m 4s			;6
-						;97					;10				;6				;+1m 24s		;7
-						;98					;10				;7				;+1Lap			;8
-						;99					;10				;10				;+1Lap			;9
-						;100				;10				;5				;Retired		;10
-						;101				;11				;11				;28m 45s		;1
-						;102				;11				;12				;+5s			;2
-						;103				;11				;13				;+12s			;3
-						;104				;11				;15				;+17s			;4
-						;105				;11				;16				;+18s			;5
-						;106				;11				;14				;+25s			;6
-						;107				;11				;19				;+34s			;7
-						;108				;11				;18				;+1Lap			;8
-						;109				;11				;17				;Retired		;9
-						;110				;20				;20				;Retired		;10
-						;111				;12				;13				;25m 21s		;1
-						;112				;12				;11				;+5s			;2
-						;113				;12				;14				;+12s			;3
-						;114				;12				;15				;+17s			;4
-						;115				;12				;12				;+18s			;5
-						;116				;12				;16				;+25s			;6
-						;117				;12				;18				;+34s			;7
-						;118				;12				;19				;+1Lap			;8
-						;119				;12				;17				;+1Lap			;9
-						;120				;12				;20				;Retired		;10
-						;121				;13				;11				;23m 05s		;1
-						;122				;13				;13				;+5s			;2
-						;123				;13				;12				;+12s			;3
-						;124				;13				;14				;+17s			;4
-						;125				;13				;16				;+18s			;5
-						;126				;13				;15				;+25s			;6
-						;127				;13				;19				;+34s			;7
-						;128				;13				;18				;+1Lap			;8
-						;129				;13				;17				;Retired		;9
-						;130				;13				;20				;Retired		;10
-						;131				;14				;15				;29m 55s		;1
-						;132				;14				;14				;+3s			;2
-						;133				;14				;12				;+5s			;3
-						;134				;14				;13				;+9s			;4
-						;135				;14				;11				;+18s			;5
-						;136				;14				;16				;+25s			;6
-						;137				;14				;19				;+34s			;7
-						;138				;14				;18				;Retired		;8
-						;139				;14				;17				;Retired		;9
-						;140				;14				;20				;Retired		;10
-						;141				;15				;11				;25m 23s		;1
-						;142				;15				;14				;+3s			;2
-						;143				;15				;13				;+5s			;3
-						;144				;15				;12				;+9s			;4
-						;145				;15				;16				;+18s			;5
-						;146				;15				;19				;+25s			;6
-						;147				;15				;15				;+34s			;7
-						;148				;15				;18				;Retired		;8
-						;149				;15				;17				;Retired		;9
-						;150				;15				;20				;Retired		;10
-						;151				;16				;16				;26m 45s		;1
-						;152				;16				;13				;+4s			;2
-						;153				;16				;12				;+8s			;3
-						;154				;16				;11				;+11s			;4
-						;155				;16				;19				;+42s			;5
-						;156				;16				;14				;+1m 4s			;6
-						;157				;16				;15				;+1m 24s		;7
-						;158				;16				;17				;+1Lap			;8
-						;159				;16				;20				;+1Lap			;9
-						;160				;16				;18				;+1Lap			;10
-						;161				;17				;13				;28m 4s			;1
-						;162				;17				;12				;+4s			;2
-						;163				;17				;14				;+8s			;3
-						;164				;17				;15				;+11s			;4
-						;165				;17				;20				;+42s			;5
-						;166				;17				;11				;+1m 4s			;6
-						;167				;17				;16				;+1m 24s		;7
-						;168				;17				;19				;+1Lap			;8
-						;169				;17				;17				;+1Lap			;9
-						;170				;17				;18				;+1Lap			;10
-						;171				;18				;12				;24m 44s		;1
-						;172				;18				;19				;+4s			;2
-						;173				;18				;11				;+8s			;3
-						;174				;18				;15				;+11s			;4
-						;175				;18				;13				;+42s			;5
-						;176				;18				;14				;+1m 4s			;6
-						;177				;18				;16				;+1m 24s		;7
-						;178				;18				;17				;+1Lap			;8
-						;179				;18				;20				;+1Lap			;9
-						;180				;18				;18				;+1Lap			;10
-						;181				;19				;13				;21m 53s		;1
-						;182				;19				;14				;+4s			;2
-						;183				;19				;12				;+8s			;3
-						;184				;19				;15				;+11s			;4
-						;185				;19				;19				;+42s			;5
-						;186				;19				;11				;+1m 4s			;6
-						;187				;19				;16				;+1m 24s		;7
-						;188				;19				;17				;+1Lap			;8
-						;189				;19				;20				;+1Lap			;9
-						;190				;19				;18				;+1Lap			;10
-						;191				;20				;11				;25m 7s			;1
-						;192				;20				;12				;+4s			;2
-						;193				;20				;13				;+8s			;3
-						;194				;20				;18				;+11s			;4
-						;195				;20				;19				;+42s			;5
-						;196				;20				;14				;+1m 4s			;6
-						;197				;20				;16				;+1m 24s		;7
-						;198				;20				;17				;+1Lap			;8
-						;199				;20				;20				;+1Lap			;9
-						;200				;20				;15				;Retired		;10
-
-
-INSERT_UPDATE RaceChampionship	;code[unique=true]	;type(code)	;name
-								;1					;CAR		;Formula 1 World Championship
-								;2					;MOTO		;MotoGP World Championship
+INSERT_UPDATE RaceChampionship	;code[unique=true]	;type(code)	;name							;drivers(code)						;granPrix(code)
+								;1					;CAR		;Formula 1 World Championship 	;1,2,3,4,5,6,7,8,9,10				;1,2,3,4,5,6,7,8,9,10
+								;2					;MOTO		;MotoGP World Championship 		;11,12,13,14,15,16,17,18,19,20		;11,12,13,14,15,16,17,18,19,20

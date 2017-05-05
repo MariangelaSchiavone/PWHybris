@@ -42,25 +42,25 @@ public class DefaultDriverFacade implements DriverFacade
 	@Override
 	public DriverData getDriver(final VehicleData vehicle)
 	{
-		//		DriverModel driver = null;
-		//		if (vehicle != null)
-		//		{
-		//			driver = driverService.getDriversForVehicle(vehicle);
-		//			if (driver == null)
-		//			{
-		//				return null;
-		//			}
-		//		}
-		//		else
-		//		{
-		//			throw new IllegalArgumentException("Stable with vehicle " + vehicle.getName() + " not found.");
-		//		}
-		//
-		//		final DriverData driverData = new DriverData();
-		//		driverData.setName(driver.getName());
-		//		driverData.setSurname(driver.getSurname());
-		//		driverData.setNationality(driver.getNationality());
-		//		return driverData;
+		DriverModel driver = null;
+		if (vehicle != null)
+		{
+			driver = driverService.getDriversForVehicle(vehicle);
+			if (driver == null)
+			{
+				return null;
+			}
+		}
+		else
+		{
+			throw new IllegalArgumentException("Stable with vehicle " + vehicle.getName() + " not found.");
+		}
+
+		final DriverData driverData = new DriverData();
+		driverData.setName(driver.getName());
+		driverData.setSurname(driver.getSurname());
+		driverData.setNationality(driver.getNationality());
+		return driverData;
 		return null;
 	}
 

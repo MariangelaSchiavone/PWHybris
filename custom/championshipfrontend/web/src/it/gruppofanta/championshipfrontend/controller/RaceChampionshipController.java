@@ -10,82 +10,51 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import it.gruppofanta.championshiprace.data.GranPrixData;
+import it.gruppofanta.championshipfrontend.NameEncoded;
 import it.gruppofanta.championshiprace.data.RaceChampionshipData;
-import it.gruppofanta.championshiprace.facades.DriverFacade;
-import it.gruppofanta.championshiprace.facades.GranPrixFacade;
 import it.gruppofanta.championshiprace.facades.RaceChampionshipFacade;
-import it.gruppofanta.championshiprace.facades.StableFacade;
 
 
 @Controller
 public class RaceChampionshipController
 {
 	private RaceChampionshipFacade raceChampionshipFacade;
-	private StableFacade stableFacade;
-	private DriverFacade driverFacade;
-	private GranPrixFacade grandPrixFacade;
-
-
 
 	@RequestMapping(value = "/raceChampionships")
 	public String showRaceChampionships(final Model model)
 	{
 		final List<RaceChampionshipData> raceChampionships = raceChampionshipFacade.getRaceChampionships();
 		model.addAttribute("raceChampionships", raceChampionships);
-		return "championship";
+		return "RaceChampionships";
 	}
 
-	//stadiums=raceChampionships
-	//stadium=raceChampionship
-	//stadiumName=raceChampionshipType
-
-	@RequestMapping(value = "/raceChampionships/{raceChampionshipType}")
-	public String showChampionshipDetails(@PathVariable String raceChampionshipType, final Model model)
+	@RequestMapping(value = "/raceChampionships/{championshipDetails}")
+	public String showRaceChampionshipDetails(@PathVariable final String championshipDetails, final Model model)
 			throws UnsupportedEncodingException
 	{
-		raceChampionshipType = URLDecoder.decode(raceChampionshipType, "UTF-8");
-		final RaceChampionshipData raceChampionship = raceChampionshipFacade.getRaceChampionship(raceChampionshipType);
-		//todo
-		//raceChampionship.setName(raceChampionshipsNameEncoded.getNameEncoded(raceChampionship.getName()));
-		model.addAttribute("raceChampionship", raceChampionship);
-		return "championshipType";
+		//		championshipDetails = URLDecoder.decode(championshipDetails, "UTF-8");
+		//		final GranPrixData raceChampionship = granPrixFacade.getGranPrix(championshipDetails);
+		//		//
+		//		raceChampionship.setName(NameEncoded.getNameEncoded(raceChampionship.getName()));
+		//		model.addAttribute("raceChampionship", raceChampionship);
+		return "RaceChampionshipDetails";
 	}
 
-	//da completare
-	@RequestMapping(value = "/raceChampionships/{raceChampionshipType}/{gpDetails}")
-	public String showGrandPrixDetails(@PathVariable final String raceChampionshipType, @PathVariable String gpDetails,
-			final Model model) throws UnsupportedEncodingException
+	//TODO
+	@RequestMapping(value = "/raceChampionships/{gpDetails}")
+	public String showGranPrixDetails(@PathVariable String gpDetails, final Model model) throws UnsupportedEncodingException
 	{
 		gpDetails = URLDecoder.decode(gpDetails, "UTF-8");
-		final GranPrixData raceChampionship = grandPrixFacade.getGranPrix(gpDetails);
-		//
-		raceChampionship.setName(raceChampionshipsNameEncoded.getNameEncoded(raceChampionship.getName()));
-		model.addAttribute("raceChampionship", raceChampionship);
-		return "championshipType";
-	}
-
-	//da completare
-	@RequestMapping(value = "/raceChampionships/{raceChampionshipType}/{gpDetails}")
-	public String showGranPrixDetails(@PathVariable final String raceChampionshipType, @PathVariable String gpDetails,
-			final Model model) throws UnsupportedEncodingException
-	{
-		gpDetails = URLDecoder.decode(gpDetails, "UTF-8");
-		final RaceChampionshipData raceChampionship = granPrixFacade.getRaceChampionship(gpDetails);
-		raceChampionship.setName(raceChampionshipsNameEncoded.getNameEncoded(raceChampionship.getName()));
+		final RaceChampionshipData raceChampionship = raceChampionshipFacade.getRaceChampionship(gpDetails);
+		raceChampionship.setName(NameEncoded.getNameEncoded(raceChampionship.getName()));
 		model.addAttribute("raceChampionship", raceChampionship);
 		return "championshipType";
 	}
 
 	@Autowired
-	public void setFacade(final RaceChampionshipFacade facade, final StableFacade stableFacade, final DriverFacade driverFacade,
-			final GranPrixFacade grandPrixFacade)
+	public void setRaceChampionshipFacade(final RaceChampionshipFacade raceChampionshipFacade)
 	{
-		this.raceChampionshipFacade = facade;
-		this.stableFacade = stableFacade;
-		this.driverFacade = driverFacade;
-		this.grandPrixFacade = grandPrixFacade;
-
+		this.raceChampionshipFacade = raceChampionshipFacade;
 	}
 
 }

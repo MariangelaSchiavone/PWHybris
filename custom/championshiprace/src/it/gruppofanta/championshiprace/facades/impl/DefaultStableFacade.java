@@ -3,6 +3,7 @@ package it.gruppofanta.championshiprace.facades.impl;
 import org.springframework.beans.factory.annotation.Required;
 
 import it.gruppofanta.championship.model.StableModel;
+import it.gruppofanta.championship.model.VehicleModel;
 import it.gruppofanta.championship.services.StableService;
 import it.gruppofanta.championshiprace.data.StableData;
 import it.gruppofanta.championshiprace.data.VehicleData;
@@ -63,16 +64,16 @@ public class DefaultStableFacade implements StableFacade
 		//		stableData.setFirstVehicle(getVehicleData(stable.getFirstVehicle()));
 		//		stableData.setSecondVehicle(getVehicleData(stable.getFirstVehicle()));
 		//		return stableData;
-		//	}
-		//
-		//	private VehicleData getVehicleData(final VehicleModel vehicleM)
-		//	{
-		//		final VehicleData vehicle = new VehicleData();
-		//		vehicle.setName(vehicleM.getName());
-		//		vehicle.setNumber(vehicleM.getNumber());
-		//		vehicle.setType(vehicleM.getType().toString());
-		//		return vehicle;
 		return null;
+	}
+
+	private VehicleData getVehicleData(final VehicleModel vehicleM)
+	{
+		final VehicleData vehicle = new VehicleData();
+		vehicle.setName(vehicleM.getName());
+		vehicle.setNumber(vehicleM.getNumber());
+		vehicle.setType(vehicleM.getType().toString());
+		return vehicle;
 	}
 
 	@Required

@@ -1,5 +1,7 @@
 package it.gruppofanta.championshiprace.facades.impl;
 
+import de.hybris.platform.converters.impl.AbstractPopulatingConverter;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,6 +26,8 @@ public class DefaultRaceChampionshipFacade implements RaceChampionshipFacade
 {
 
 	private RaceChampionshipService raceChampionshipService;
+
+	private AbstractPopulatingConverter<VehicleModel, VehicleData> vehicleConverter;
 
 	@Override
 	public RaceChampionshipData getRaceChampionship(final String name)
@@ -87,16 +91,6 @@ public class DefaultRaceChampionshipFacade implements RaceChampionshipFacade
 		return raceChampionshipFacadeData;
 	}
 
-	private VehicleData getVehicleData(final DriverModel driverM)
-	{
-		final VehicleModel vehicleM = driverM.getVehicle();
-		final VehicleData vehicle = new VehicleData();
-		vehicle.setName(vehicleM.getName());
-		vehicle.setNumber(vehicleM.getNumber());
-		vehicle.setType(vehicleM.getType().toString());
-		return vehicle;
-	}
-
 	private DriverData getDriverData(final PlacingModel placing)
 	{
 		final DriverModel driverM = placing.getDriver();
@@ -104,7 +98,7 @@ public class DefaultRaceChampionshipFacade implements RaceChampionshipFacade
 		driver.setName(driverM.getName());
 		driver.setSurname(driver.getSurname());
 		driver.setNationality(driverM.getNationality());
-		driver.setVehicle(getVehicleData(driverM));
+		driver.setVehicle(vehicleConverter.convert(driverM.getVehicle()));
 		return driver;
 	}
 
@@ -140,11 +134,18 @@ public class DefaultRaceChampionshipFacade implements RaceChampionshipFacade
 
 	}
 
-
 	@Required
 	public void setRaceChampionshipService(final RaceChampionshipService raceChampionshipService)
 	{
 		this.raceChampionshipService = raceChampionshipService;
 	}
+
+
+	@Required
+	public void setVehicleConverter(final AbstractPopulatingConverter<VehicleModel, VehicleData> vehicleConverter)
+	{
+		this.vehicleConverter = vehicleConverter;
+	}
+
 
 }

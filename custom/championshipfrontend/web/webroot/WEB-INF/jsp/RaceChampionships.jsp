@@ -3,9 +3,9 @@
 <html>
     <title>Race Championship Listing</title>
     <body>
-        <h1>Race Championship </h1>
+        <h1>Race Championships</h1>
      <ul>
-     <c:forEach var="racechampionship" items="${racechampionships}">
+     <c:forEach var="racechampionship" items="${raceChampionships}">
         <li><a href="./racechampionships/${racechampionship.name}">${racechampionship.name}</a></li>
       </c:forEach>
       </ul>

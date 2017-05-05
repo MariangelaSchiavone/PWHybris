@@ -19,10 +19,10 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context-3.1.xsd">
            
-    <context:component-scan base-package="it.cocacola.championship"/>
+    <context:component-scan base-package="it.gruppofanta.championship"/>
     
     <bean id="assignDateGrandPrixInterceptor" 
-   class="it.cocacola.championship.interceptors.AssignDateGrandPrixInterceptor">
+   class="it.gruppofanta.championship.interceptors.AssignDateGrandPrixInterceptor">
    </bean>
    
    <bean id="recipeTimePrepareMapping"
@@ -32,22 +32,22 @@
    </bean>
     
 	<alias name="defaultGranPrixService" alias="granPrixService"/>
-    <bean id="defaultGranPrixService" class="it.cocacola.championship.services.impl.DefaultGranPrixService">
+    <bean id="defaultGranPrixService" class="it.gruppofanta.championship.services.impl.DefaultGranPrixService">
         <property name="granPrixDAO" ref="granPrixDAO"/>
     </bean>
     
     <alias name="defaultDriverService" alias="driverService"/>
-    <bean id="defaultDriverService" class="it.cocacola.championship.services.impl.DefaultDriverService">
+    <bean id="defaultDriverService" class="it.gruppofanta.championship.services.impl.DefaultDriverService">
         <property name="driverDAO" ref="driverDAO"/>
     </bean>
     
 	<alias name="defaultRaceChampionshipService" alias="raceChampionshipService"/>
-    <bean id="defaultRaceChampionshipService" class="it.cocacola.championship.services.impl.DefaultRaceChampionshipService">
+    <bean id="defaultRaceChampionshipService" class="it.gruppofanta.championship.services.impl.DefaultRaceChampionshipService">
         <property name="raceChampionshipDAO" ref="raceChampionshipDAO"/>
     </bean>
 	
 	<alias name="defaultStableService" alias="stableService"/>
-    <bean id="defaultStableService" class="it.cocacola.championship.services.impl.DefaultStableService">
+    <bean id="defaultStableService" class="it.gruppofanta.championship.services.impl.DefaultStableService">
         <property name="stableDAO" ref="stableDAO"/>
     </bean>		
 			
