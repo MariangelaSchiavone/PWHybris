@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import it.gruppofanta.championshipfrontend.NameEncoded;
 import it.gruppofanta.championshiprace.data.RaceChampionshipData;
 import it.gruppofanta.championshiprace.facades.RaceChampionshipFacade;
 
@@ -29,26 +28,13 @@ public class RaceChampionshipController
 	}
 
 	@RequestMapping(value = "/raceChampionships/{championshipDetails}")
-	public String showRaceChampionshipDetails(@PathVariable final String championshipDetails, final Model model)
+	public String showRaceChampionshipDetails(@PathVariable String championshipDetails, final Model model)
 			throws UnsupportedEncodingException
 	{
-		//		championshipDetails = URLDecoder.decode(championshipDetails, "UTF-8");
-		//		final GranPrixData raceChampionship = granPrixFacade.getGranPrix(championshipDetails);
-		//		//
-		//		raceChampionship.setName(NameEncoded.getNameEncoded(raceChampionship.getName()));
-		//		model.addAttribute("raceChampionship", raceChampionship);
-		return "RaceChampionshipDetails";
-	}
-
-	//TODO
-	@RequestMapping(value = "/raceChampionships/{gpDetails}")
-	public String showGranPrixDetails(@PathVariable String gpDetails, final Model model) throws UnsupportedEncodingException
-	{
-		gpDetails = URLDecoder.decode(gpDetails, "UTF-8");
-		final RaceChampionshipData raceChampionship = raceChampionshipFacade.getRaceChampionship(gpDetails);
-		raceChampionship.setName(NameEncoded.getNameEncoded(raceChampionship.getName()));
+		championshipDetails = URLDecoder.decode(championshipDetails, "UTF-8");
+		final RaceChampionshipData raceChampionship = raceChampionshipFacade.getRaceChampionship(championshipDetails);
 		model.addAttribute("raceChampionship", raceChampionship);
-		return "championshipType";
+		return "RaceChampionshipDetails";
 	}
 
 	@Autowired

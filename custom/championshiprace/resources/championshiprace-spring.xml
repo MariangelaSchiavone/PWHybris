@@ -69,6 +69,7 @@
     <alias name="defaultRaceChampionshipFacade" alias="raceChampionshipFacade"/>
     <bean id="defaultRaceChampionshipFacade" class="it.gruppofanta.championshiprace.facades.impl.DefaultRaceChampionshipFacade">
         <property name="raceChampionshipService" ref="raceChampionshipService"/>
+        <property name="vehicleConverter" ref="vehicleConverter"/>
     </bean>
     
 </beans>
