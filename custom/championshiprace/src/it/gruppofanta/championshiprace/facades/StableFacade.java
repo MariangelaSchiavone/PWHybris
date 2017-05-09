@@ -1,11 +1,11 @@
 package it.gruppofanta.championshiprace.facades;
 
 import it.gruppofanta.championshiprace.data.StableData;
-import it.gruppofanta.championshiprace.data.VehicleData;
+
 
 public interface StableFacade
 {
-	StableData getStable(String name);
+	StableData getStableForCode(String code);
 
-	StableData getStable(VehicleData vehicle);
+	StableData getStableForVehicle(String vehicle);
 }

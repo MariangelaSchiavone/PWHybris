@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Required;
 
 import it.gruppofanta.championship.daos.DriverDAO;
 import it.gruppofanta.championship.model.DriverModel;
-import it.gruppofanta.championship.model.VehicleModel;
 import it.gruppofanta.championship.services.DriverService;
 
 
@@ -33,8 +32,7 @@ public class DefaultDriverService implements DriverService
 	}
 
 	@Override
-	public DriverModel getDriversForVehicle(final VehicleModel vehicle)
-			throws AmbiguousIdentifierException, UnknownIdentifierException
+	public DriverModel getDriversForVehicle(final String vehicle) throws AmbiguousIdentifierException, UnknownIdentifierException
 	{
 		final List<DriverModel> result = driverDAO.findDriversByVehicle(vehicle);
 		if (result.isEmpty())

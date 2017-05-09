@@ -18,12 +18,14 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
 
 	<bean class="it.gruppofanta.championshiprace.data.VehicleData">
+		<property name="code" type="String"/>
 		<property name="name" type="String"/>
 		<property name="type" type="String"/>
 		<property name="number" type="Integer"/>
 	</bean>
 
 	<bean class="it.gruppofanta.championshiprace.data.StableData">
+		<property name="code" type="String"/>
 		<property name="name" type="String"/>
 		<property name="nation" type="String"/>
 		<property name="firstVehicle" type="it.gruppofanta.championshiprace.data.VehicleData"/>
@@ -31,6 +33,7 @@
 	</bean>
 
 	<bean class="it.gruppofanta.championshiprace.data.DriverData">
+		<property name="code" type="String"/>
 		<property name="name" type="String"/>
 		<property name="surname" type="String"/>
 		<property name="nationality" type="String"/>
@@ -38,12 +41,14 @@
 	</bean>
 
 	<bean class="it.gruppofanta.championshiprace.data.PlacingData">
+		<property name="code" type="String"/>
 		<property name="position" type="Integer"/>
 		<property name="time" type="String"/>
 		<property name="driver" type="it.gruppofanta.championshiprace.data.DriverData" />
 	</bean>
 
 	<bean class="it.gruppofanta.championshiprace.data.GranPrixData">
+		<property name="code" type="String"/>
 		<property name="name" type="String"/>
 		<property name="date" type="java.util.Date"/>
 		<property name="nation" type="String" />
@@ -52,26 +57,31 @@
 	</bean>
 
 	<bean class="it.gruppofanta.championshiprace.data.DriverEntryData">
+		<property name="code" type="String"/>
 		<property name="position" type="Integer"/>
 		<property name="driver" type="it.gruppofanta.championshiprace.data.DriverData" />
 		<property name="points" type="Integer"/>
 	</bean>
 
 	<bean class="it.gruppofanta.championshiprace.data.StableEntryData">
+		<property name="code" type="String"/>
 		<property name="position" type="Integer"/>
 		<property name="stable" type="it.gruppofanta.championshiprace.data.StableData" />
 		<property name="points" type="Integer"/>
 	</bean>
 
 	<bean class="it.gruppofanta.championshiprace.data.DriverRankingData">
+		<property name="code" type="String"/>
 		<property name="placing" type="java.util.List&lt;it.gruppofanta.championshiprace.data.DriverEntryData&gt;" />
 	</bean>
 
 	<bean class="it.gruppofanta.championshiprace.data.StableRankingData">
+		<property name="code" type="String"/>
 		<property name="placing" type="java.util.List&lt;it.gruppofanta.championshiprace.data.StableEntryData&gt;" />
 	</bean>
 
 	<bean class="it.gruppofanta.championshiprace.data.RaceChampionshipData">
+		<property name="code" type="String"/>
 		<property name="name" type="String" />
 		<property name="type" type="String" />
 		<property name="stableRanking" type="it.gruppofanta.championshiprace.data.StableRankingData" />

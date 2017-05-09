@@ -9,20 +9,12 @@ import org.springframework.beans.factory.annotation.Required;
 
 import it.gruppofanta.championship.daos.StableDao;
 import it.gruppofanta.championship.model.StableModel;
-import it.gruppofanta.championship.model.VehicleModel;
 import it.gruppofanta.championship.services.StableService;
 
 
 public class DefaultStableService implements StableService
 {
 	private StableDao stableDAO;
-
-
-	@Override
-	public List<StableModel> getStables()
-	{
-		return stableDAO.findStables();
-	}
 
 	@Override
 	public StableModel getStablesForCode(final String code) throws AmbiguousIdentifierException, UnknownIdentifierException
@@ -41,8 +33,7 @@ public class DefaultStableService implements StableService
 	}
 
 	@Override
-	public StableModel getStablesForVehicle(final VehicleModel vehicle)
-			throws AmbiguousIdentifierException, UnknownIdentifierException
+	public StableModel getStablesForVehicle(final String vehicle) throws AmbiguousIdentifierException, UnknownIdentifierException
 	{
 		final List<StableModel> result = stableDAO.findStablesByVehicle(vehicle);
 		if (result.isEmpty())

@@ -56,6 +56,7 @@ public class DefaultRaceChampionshipFacade implements RaceChampionshipFacade
 				final GranPrixModel gp = granPrixIterator.next();
 				granPrix.add(getGranPrixData(gp));
 			}
+			rcd.setCode(rcm.getCode());
 			rcd.setName(rcm.getName());
 			rcd.setType(rcm.getType().toString());
 			rcd.setGranPrix(granPrix);
@@ -83,6 +84,7 @@ public class DefaultRaceChampionshipFacade implements RaceChampionshipFacade
 				}
 			}
 			final RaceChampionshipData rcd = new RaceChampionshipData();
+			rcd.setCode(rcm.getCode());
 			rcd.setName(rcm.getName());
 			rcd.setType(rcm.getType().toString());
 			rcd.setGranPrix(granPrix);
@@ -95,6 +97,7 @@ public class DefaultRaceChampionshipFacade implements RaceChampionshipFacade
 	{
 		final DriverModel driverM = placing.getDriver();
 		final DriverData driver = new DriverData();
+		driver.setCode(driverM.getCode());
 		driver.setName(driverM.getName());
 		driver.setSurname(driver.getSurname());
 		driver.setNationality(driverM.getNationality());
@@ -105,6 +108,7 @@ public class DefaultRaceChampionshipFacade implements RaceChampionshipFacade
 	private GranPrixData getGranPrixData(final GranPrixModel gp)
 	{
 		final GranPrixData summary = new GranPrixData();
+		summary.setCode(gp.getCode());
 		summary.setDate(gp.getDate());
 		summary.setLaps(gp.getLaps());
 		summary.setName(gp.getName());
@@ -124,6 +128,7 @@ public class DefaultRaceChampionshipFacade implements RaceChampionshipFacade
 			{
 				final PlacingModel placing = placingIterator.next();
 				final PlacingData summary = new PlacingData();
+				summary.setCode(placing.getCode());
 				summary.setPosition(placing.getPosition());
 				summary.setTime(placing.getTime());
 				summary.setDriver(getDriverData(placing));

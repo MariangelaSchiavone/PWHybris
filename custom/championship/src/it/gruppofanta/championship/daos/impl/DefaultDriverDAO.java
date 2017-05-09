@@ -34,15 +34,18 @@ public class DefaultDriverDAO implements DriverDAO
 		return flexibleSearchService.<DriverModel> search(query).getResult();
 	}
 
-	//TODO cambiare da model a string e fare la ricerca per codice
 	@Override
-	public List<DriverModel> findDriversByVehicle(final VehicleModel vehicle)
+	public List<DriverModel> findDriversByVehicle(final String vehicle)
 	{
-		final String queryString = "SELECT {p:" + DriverModel.PK + "} FROM {" + DriverModel._TYPECODE + " AS p}, {"
-				+ VehicleModel._TYPECODE + " AS v} "//
-				+ "WHERE " + "{p:" + DriverModel.VEHICLE + "}=?vehicle";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
-		query.addQueryParameter("vehicle", vehicle.getPk());
+		String queryString = "SELECT {p:" + VehicleModel.PK + "} FROM {" + VehicleModel._TYPECODE + " AS v} "//
+				+ "WHERE " + "{p:" + VehicleModel.CODE + "}=?vehicle";
+		FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+		query.addQueryParameter("vehicle", vehicle);
+		final VehicleModel vehicleModel = flexibleSearchService.<VehicleModel> search(query).getResult().get(0);
+		queryString = "SELECT {p:" + DriverModel.PK + "} FROM {" + DriverModel._TYPECODE + " AS p}" + "WHERE " + "{p:"
+				+ DriverModel.VEHICLE + "}=?vehicle";
+		query = new FlexibleSearchQuery(queryString);
+		query.addQueryParameter("vehicle", vehicleModel.getPk());
 		return flexibleSearchService.<DriverModel> search(query).getResult();
 	}
 }

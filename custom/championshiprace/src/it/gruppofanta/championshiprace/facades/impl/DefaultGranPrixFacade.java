@@ -31,6 +31,7 @@ public class DefaultGranPrixFacade implements GranPrixFacade
 		}
 
 		final GranPrixData granPrixData = new GranPrixData();
+		granPrixData.setCode(granPrix.getCode());
 		granPrixData.setName(granPrix.getName());
 		granPrixData.setLaps(granPrix.getLaps());
 		granPrixData.setNation(granPrix.getNation());

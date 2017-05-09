@@ -16,12 +16,12 @@ public class DefaultStableFacade implements StableFacade
 	private StableService stableService;
 
 	@Override
-	public StableData getStable(final String name)
+	public StableData getStableForCode(final String code)
 	{
 		StableModel stable = null;
-		if (name != null)
+		if (code != null)
 		{
-			stable = stableService.getStablesForCode(name);
+			stable = stableService.getStablesForCode(code);
 			if (stable == null)
 			{
 				return null;
@@ -29,10 +29,11 @@ public class DefaultStableFacade implements StableFacade
 		}
 		else
 		{
-			throw new IllegalArgumentException("Stable with name " + name + " not found.");
+			throw new IllegalArgumentException("Stable with name " + code + " not found.");
 		}
 
 		final StableData stableData = new StableData();
+		stableData.setCode(stable.getCode());
 		stableData.setName(stable.getName());
 		stableData.setNation(stable.getNation());
 		stableData.setFirstVehicle(getVehicleData(stable.getFirstVehicle()));
@@ -41,35 +42,36 @@ public class DefaultStableFacade implements StableFacade
 	}
 
 	@Override
-	public StableData getStable(final VehicleData vehicle)
+	public StableData getStableForVehicle(final String vehicle)
 	{
 
-		//		StableModel stable = null;
-		//		if (vehicle != null)
-		//		{
-		//			stable = stableService.getStablesForVehicle(vehicle);
-		//			if (stable == null)
-		//			{
-		//				return null;
-		//			}
-		//		}
-		//		else
-		//		{
-		//			throw new IllegalArgumentException("Stable with vehicle " + vehicle.getName() + " not found.");
-		//		}
-		//
-		//		final StableData stableData = new StableData();
-		//		stableData.setName(stable.getName());
-		//		stableData.setNation(stable.getNation());
-		//		stableData.setFirstVehicle(getVehicleData(stable.getFirstVehicle()));
-		//		stableData.setSecondVehicle(getVehicleData(stable.getFirstVehicle()));
-		//		return stableData;
-		return null;
+		StableModel stable = null;
+		if (vehicle != null)
+		{
+			stable = stableService.getStablesForVehicle(vehicle);
+			if (stable == null)
+			{
+				return null;
+			}
+		}
+		else
+		{
+			throw new IllegalArgumentException("Stable with vehicle " + vehicle + " not found.");
+		}
+
+		final StableData stableData = new StableData();
+		stableData.setCode(stable.getCode());
+		stableData.setName(stable.getName());
+		stableData.setNation(stable.getNation());
+		stableData.setFirstVehicle(getVehicleData(stable.getFirstVehicle()));
+		stableData.setSecondVehicle(getVehicleData(stable.getFirstVehicle()));
+		return stableData;
 	}
 
 	private VehicleData getVehicleData(final VehicleModel vehicleM)
 	{
 		final VehicleData vehicle = new VehicleData();
+		vehicle.setCode(vehicleM.getCode());
 		vehicle.setName(vehicleM.getName());
 		vehicle.setNumber(vehicleM.getNumber());
 		vehicle.setType(vehicleM.getType().toString());

@@ -13,6 +13,7 @@ public class DefaultVehiclePopulator implements Populator<VehicleModel, VehicleD
 	@Override
 	public void populate(final VehicleModel source, final VehicleData target) throws ConversionException
 	{
+		target.setCode(source.getCode());
 		target.setName(source.getName());
 		target.setNumber(source.getNumber());
 		target.setType(source.getType().toString());
