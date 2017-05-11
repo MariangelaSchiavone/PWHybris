@@ -25,6 +25,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="../../raceChampionships">Back to RaceChampionship</a>
+	<a href="../../raceChampionships">Back to RaceChampionships</a>
 </body>
 </html>
