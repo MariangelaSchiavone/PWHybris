@@ -10,6 +10,6 @@
 	<p>${driver.vehicle.name}</p>
 	<p>${stable.name}</p>
 
-	<a href="/racechampionships">Back to RaceChampionship</a>
+	<a href="../racechampionships">Back to RaceChampionships</a>
 </body>
 </html>

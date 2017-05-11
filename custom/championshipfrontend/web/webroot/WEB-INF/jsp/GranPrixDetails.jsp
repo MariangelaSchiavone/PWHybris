@@ -20,7 +20,7 @@
 		<c:forEach var="placing" items="${granPrix.placing}">
 			<tr>
 				<td>${placing.position}</td>
-				<td>${placing.driver.name}</td>
+				<td>${placing.driver.name} ${placing.driver.surname}</td>
 				<td>${placing.time}</td>
 			</tr>
 		</c:forEach>

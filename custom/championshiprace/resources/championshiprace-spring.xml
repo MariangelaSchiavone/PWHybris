@@ -18,8 +18,9 @@
 	<context:component-scan base-package="it.gruppofanta.championship" />
 
 
-	<bean id="vehicleData" class="it.gruppofanta.championshiprace.data.VehicleData" scope="prototype" />
-	
+	<bean id="vehicleData" class="it.gruppofanta.championshiprace.data.VehicleData"
+		scope="prototype" />
+
 	<alias name="defaultVehicleConverter" alias="vehicleConverter" />
 	<bean id="defaultVehicleConverter" parent="abstractPopulatingConverter">
 		<lookup-method name="createTarget" bean="vehicleData" />
@@ -29,47 +30,222 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<alias alias="vehiclePopulator" name="defaultVehiclePopulator" />
-	<bean id="defaultVehiclePopulator" class="it.gruppofanta.championshiprace.populators.DefaultVehiclePopulator" scope="prototype" />
-	
-	<bean id="stableData" class="it.gruppofanta.championshiprace.data.StableData" scope="prototype" />
+	<bean id="defaultVehiclePopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultVehiclePopulator"
+		scope="prototype" />
 
-	<bean id="driverData" class="it.gruppofanta.championshiprace.data.DriverData" scope="prototype" />
+	<bean id="stableData" class="it.gruppofanta.championshiprace.data.StableData"
+		scope="prototype" />
 
-	<bean id="placingData" class="it.gruppofanta.championshiprace.data.PlacingData" scope="prototype" />
+	<alias name="defaultStableConverter" alias="stableConverter" />
+	<bean id="defaultStableConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="stableData" />
+		<property name="populators">
+			<list>
+				<ref bean="stablePopulator" />
+			</list>
+		</property>
+	</bean>
 
-	<bean id="GranPrixData" class="it.gruppofanta.championshiprace.data.GranPrixData" scope="prototype" />
+	<alias alias="stablePopulator" name="defaultStablePopulator" />
+	<bean id="defaultStablePopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultStablePopulator"
+		scope="prototype">
+		<property name="vehicleConverter" ref="vehicleConverter" />
+	</bean>
 
-	<bean id="driverEntryData" class="it.gruppofanta.championshiprace.data.DriverEntryData" scope="prototype" /><alias name="defaultGranPrixConverter" alias="granPrixConverter" />
+	<bean id="driverData" class="it.gruppofanta.championshiprace.data.DriverData"
+		scope="prototype" />
 
-	<bean id="stableEntryData" class="it.gruppofanta.championshiprace.data.StableEntryData" scope="prototype" />
-	
-	<bean id="driverRankingData" class="it.gruppofanta.championshiprace.data.DriverRankingData" scope="prototype" />
+	<alias name="defaultDriverConverter" alias="driverConverter" />
+	<bean id="defaultDriverConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="driverData" />
+		<property name="populators">
+			<list>
+				<ref bean="driverPopulator" />
+			</list>
+		</property>
+	</bean>
 
-	<bean id="stableRankingData" class="it.gruppofanta.championshiprace.data.StableRankingData" scope="prototype" />
+	<alias alias="driverPopulator" name="defaultDriverPopulator" />
+	<bean id="defaultDriverPopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultDriverPopulator"
+		scope="prototype">
+		<property name="vehicleConverter" ref="vehicleConverter" />
+	</bean>
 
-	<bean id="raceChampionshipData" class="it.gruppofanta.championshiprace.data.RaceChampionshipData" scope="prototype" />
-	
-	<alias name="defaultDriverFacade" alias="driverFacade"/>
-    <bean id="defaultDriverFacade" class="it.gruppofanta.championshiprace.facades.impl.DefaultDriverFacade">
-        <property name="driverService" ref="driverService"/>
-    </bean>
-    
-    <alias name="defaultStableFacade" alias="stableFacade"/>
-    <bean id="defaultStableFacade" class="it.gruppofanta.championshiprace.facades.impl.DefaultStableFacade">
-        <property name="stableService" ref="stableService"/>
-    </bean>
-    
-    <alias name="defaultGranPrixFacade" alias="granPrixFacade"/>
-    <bean id="defaultGranPrixFacade" class="it.gruppofanta.championshiprace.facades.impl.DefaultGranPrixFacade">
-        <property name="granPrixService" ref="granPrixService"/>
-    </bean>
-    
-    <alias name="defaultRaceChampionshipFacade" alias="raceChampionshipFacade"/>
-    <bean id="defaultRaceChampionshipFacade" class="it.gruppofanta.championshiprace.facades.impl.DefaultRaceChampionshipFacade">
-        <property name="raceChampionshipService" ref="raceChampionshipService"/>
-        <property name="vehicleConverter" ref="vehicleConverter"/>
-    </bean>
-    
+	<bean id="placingData" class="it.gruppofanta.championshiprace.data.PlacingData"
+		scope="prototype" />
+
+	<alias name="defaultPlacingConverter" alias="placingConverter" />
+	<bean id="defaultPlacingConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="placingData" />
+		<property name="populators">
+			<list>
+				<ref bean="placingPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias alias="placingPopulator" name="defaultPlacingPopulator" />
+	<bean id="defaultPlacingPopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultPlacingPopulator"
+		scope="prototype">
+		<property name="driverConverter" ref="driverConverter" />
+	</bean>
+
+	<bean id="granPrixData" class="it.gruppofanta.championshiprace.data.GranPrixData"
+		scope="prototype" />
+
+	<alias name="defaultGranPrixConverter" alias="granPrixConverter" />
+	<bean id="defaultGranPrixConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="granPrixData" />
+		<property name="populators">
+			<list>
+				<ref bean="granPrixPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias alias="granPrixPopulator" name="defaultGranPrixPopulator" />
+	<bean id="defaultGranPrixPopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultGranPrixPopulator"
+		scope="prototype">
+		<property name="placingConverter" ref="placingConverter" />
+	</bean>
+
+	<bean id="driverEntryData" class="it.gruppofanta.championshiprace.data.DriverEntryData"
+		scope="prototype" />
+
+	<alias name="defaultDriverEntryConverter" alias="driverEntryConverter" />
+	<bean id="defaultDriverEntryConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="driverEntryData" />
+		<property name="populators">
+			<list>
+				<ref bean="driverEntryPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias alias="driverEntryPopulator" name="defaultDriverEntryPopulator" />
+	<bean id="defaultDriverEntryPopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultDriverEntryPopulator"
+		scope="prototype">
+		<property name="driverConverter" ref="driverConverter" />
+	</bean>
+
+	<bean id="stableEntryData" class="it.gruppofanta.championshiprace.data.StableEntryData"
+		scope="prototype" />
+
+	<alias name="defaultStableEntryConverter" alias="stableEntryConverter" />
+	<bean id="defaultStableEntryConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="stableEntryData" />
+		<property name="populators">
+			<list>
+				<ref bean="stableEntryPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias alias="stableEntryPopulator" name="defaultStableEntryPopulator" />
+	<bean id="defaultStableEntryPopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultStableEntryPopulator"
+		scope="prototype">
+		<property name="stableConverter" ref="stableConverter" />
+	</bean>
+
+	<bean id="driverRankingData" class="it.gruppofanta.championshiprace.data.DriverRankingData"
+		scope="prototype" />
+
+	<alias name="defaultDriverRankingConverter" alias="driverRankingConverter" />
+	<bean id="defaultDriverRankingConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="driverRankingData" />
+		<property name="populators">
+			<list>
+				<ref bean="driverRankingPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias alias="driverRankingPopulator" name="defaultDriverRankingPopulator" />
+	<bean id="defaultDriverRankingPopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultDriverRankingPopulator"
+		scope="prototype">
+		<property name="driverEntryConverter" ref="driverEntryConverter" />
+	</bean>
+
+
+	<bean id="stableRankingData" class="it.gruppofanta.championshiprace.data.StableRankingData"
+		scope="prototype" />
+
+	<alias name="defaultStableRankingConverter" alias="stableRankingConverter" />
+	<bean id="defaultStableRankingConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="stableRankingData" />
+		<property name="populators">
+			<list>
+				<ref bean="stableRankingPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias alias="stableRankingPopulator" name="defaultStableRankingPopulator" />
+	<bean id="defaultStableRankingPopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultStableRankingPopulator"
+		scope="prototype">
+		<property name="stableEntryConverter" ref="stableEntryConverter" />
+	</bean>
+
+	<bean id="raceChampionshipData"
+		class="it.gruppofanta.championshiprace.data.RaceChampionshipData"
+		scope="prototype" />
+
+	<alias name="defaultRaceChampionshipConverter" alias="raceChampionshipConverter" />
+	<bean id="defaultRaceChampionshipConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="raceChampionshipData" />
+		<property name="populators">
+			<list>
+				<ref bean="raceChampionshipPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias alias="raceChampionshipPopulator" name="defaultRaceChampionshipPopulator" />
+	<bean id="defaultRaceChampionshipPopulator"
+		class="it.gruppofanta.championshiprace.populators.DefaultRaceChampionshipPopulator"
+		scope="prototype">
+		<property name="stableRankingConverter" ref="stableRankingConverter" />
+		<property name="driverRankingConverter" ref="driverRankingConverter" />
+		<property name="granPrixConverter" ref="granPrixConverter" />
+	</bean>
+
+	<alias name="defaultDriverFacade" alias="driverFacade" />
+	<bean id="defaultDriverFacade"
+		class="it.gruppofanta.championshiprace.facades.impl.DefaultDriverFacade">
+		<property name="driverService" ref="driverService" />
+		<property name="driverConverter" ref="driverConverter" />
+	</bean>
+
+	<alias name="defaultStableFacade" alias="stableFacade" />
+	<bean id="defaultStableFacade"
+		class="it.gruppofanta.championshiprace.facades.impl.DefaultStableFacade">
+		<property name="stableService" ref="stableService" />
+		<property name="stableConverter" ref="stableConverter" />
+	</bean>
+
+	<alias name="defaultGranPrixFacade" alias="granPrixFacade" />
+	<bean id="defaultGranPrixFacade"
+		class="it.gruppofanta.championshiprace.facades.impl.DefaultGranPrixFacade">
+		<property name="granPrixService" ref="granPrixService" />
+		<property name="granPrixConverter" ref="granPrixConverter" />
+	</bean>
+
+	<alias name="defaultRaceChampionshipFacade" alias="raceChampionshipFacade" />
+	<bean id="defaultRaceChampionshipFacade"
+		class="it.gruppofanta.championshiprace.facades.impl.DefaultRaceChampionshipFacade">
+		<property name="raceChampionshipService" ref="raceChampionshipService" />
+		<property name="raceChampionshipConverter" ref="raceChampionshipConverter" />
+	</bean>
+
 </beans>

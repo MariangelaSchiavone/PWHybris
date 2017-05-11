@@ -33,7 +33,7 @@
 		<c:forEach var="driverRanking"
 			items="${raceChampionship.driverRanking.placing}">
 			<tr>
-				<td>${driverRanking.driver}</td>
+				<td>${driverRanking.driver.name} ${driverRanking.driver.surname}</td>
 				<td>${driverRanking.driver.vehicle.name}</td>
 				<td>${driverRanking.points}</td>
 			</tr>

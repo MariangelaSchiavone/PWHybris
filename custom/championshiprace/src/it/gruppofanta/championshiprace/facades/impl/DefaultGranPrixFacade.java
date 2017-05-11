@@ -1,5 +1,7 @@
 package it.gruppofanta.championshiprace.facades.impl;
 
+import de.hybris.platform.converters.impl.AbstractPopulatingConverter;
+
 import org.springframework.beans.factory.annotation.Required;
 
 import it.gruppofanta.championship.model.GranPrixModel;
@@ -12,6 +14,8 @@ public class DefaultGranPrixFacade implements GranPrixFacade
 {
 
 	private GranPrixService granPrixService;
+
+	private AbstractPopulatingConverter<GranPrixModel, GranPrixData> granPrixConverter;
 
 	@Override
 	public GranPrixData getGranPrix(final String name)
@@ -29,14 +33,7 @@ public class DefaultGranPrixFacade implements GranPrixFacade
 		{
 			throw new IllegalArgumentException("GranPrix with name " + name + " not found.");
 		}
-
-		final GranPrixData granPrixData = new GranPrixData();
-		granPrixData.setCode(granPrix.getCode());
-		granPrixData.setName(granPrix.getName());
-		granPrixData.setLaps(granPrix.getLaps());
-		granPrixData.setNation(granPrix.getNation());
-		granPrixData.setDate(granPrix.getDate());
-		return granPrixData;
+		return granPrixConverter.convert(granPrix);
 	}
 
 	@Required
@@ -45,5 +42,10 @@ public class DefaultGranPrixFacade implements GranPrixFacade
 		this.granPrixService = granPrixService;
 	}
 
+	@Required
+	public void setGranPrixConverter(final AbstractPopulatingConverter<GranPrixModel, GranPrixData> granPrixConverter)
+	{
+		this.granPrixConverter = granPrixConverter;
+	}
 
 }

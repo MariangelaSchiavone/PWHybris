@@ -1,5 +1,7 @@
 package it.gruppofanta.championshiprace.facades.impl;
 
+import de.hybris.platform.converters.impl.AbstractPopulatingConverter;
+
 import org.springframework.beans.factory.annotation.Required;
 
 import it.gruppofanta.championship.model.DriverModel;
@@ -12,6 +14,8 @@ public class DefaultDriverFacade implements DriverFacade
 {
 
 	private DriverService driverService;
+
+	private AbstractPopulatingConverter<DriverModel, DriverData> driverConverter;
 
 	@Override
 	public DriverData getDriverForCode(final String code)
@@ -29,13 +33,7 @@ public class DefaultDriverFacade implements DriverFacade
 		{
 			throw new IllegalArgumentException("Driver with name " + code + " not found.");
 		}
-
-		final DriverData driverData = new DriverData();
-		driverData.setCode(driver.getCode());
-		driverData.setName(driver.getName());
-		driverData.setSurname(driver.getSurname());
-		driverData.setNationality(driver.getNationality());
-		return driverData;
+		return driverConverter.convert(driver);
 	}
 
 
@@ -55,13 +53,7 @@ public class DefaultDriverFacade implements DriverFacade
 		{
 			throw new IllegalArgumentException("Stable with vehicle " + vehicle + " not found.");
 		}
-
-		final DriverData driverData = new DriverData();
-		driverData.setCode(driver.getCode());
-		driverData.setName(driver.getName());
-		driverData.setSurname(driver.getSurname());
-		driverData.setNationality(driver.getNationality());
-		return driverData;
+		return driverConverter.convert(driver);
 	}
 
 	@Required
@@ -69,4 +61,12 @@ public class DefaultDriverFacade implements DriverFacade
 	{
 		this.driverService = driverService;
 	}
+
+	@Required
+	public void setDriverConverter(final AbstractPopulatingConverter<DriverModel, DriverData> driverConverter)
+	{
+		this.driverConverter = driverConverter;
+	}
+
+
 }

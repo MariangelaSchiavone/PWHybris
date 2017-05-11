@@ -1,12 +1,12 @@
 package it.gruppofanta.championshiprace.facades.impl;
 
+import de.hybris.platform.converters.impl.AbstractPopulatingConverter;
+
 import org.springframework.beans.factory.annotation.Required;
 
 import it.gruppofanta.championship.model.StableModel;
-import it.gruppofanta.championship.model.VehicleModel;
 import it.gruppofanta.championship.services.StableService;
 import it.gruppofanta.championshiprace.data.StableData;
-import it.gruppofanta.championshiprace.data.VehicleData;
 import it.gruppofanta.championshiprace.facades.StableFacade;
 
 
@@ -14,6 +14,8 @@ public class DefaultStableFacade implements StableFacade
 {
 
 	private StableService stableService;
+
+	private AbstractPopulatingConverter<StableModel, StableData> stableConverter;
 
 	@Override
 	public StableData getStableForCode(final String code)
@@ -31,14 +33,7 @@ public class DefaultStableFacade implements StableFacade
 		{
 			throw new IllegalArgumentException("Stable with name " + code + " not found.");
 		}
-
-		final StableData stableData = new StableData();
-		stableData.setCode(stable.getCode());
-		stableData.setName(stable.getName());
-		stableData.setNation(stable.getNation());
-		stableData.setFirstVehicle(getVehicleData(stable.getFirstVehicle()));
-		stableData.setSecondVehicle(getVehicleData(stable.getFirstVehicle()));
-		return stableData;
+		return stableConverter.convert(stable);
 	}
 
 	@Override
@@ -59,23 +54,7 @@ public class DefaultStableFacade implements StableFacade
 			throw new IllegalArgumentException("Stable with vehicle " + vehicle + " not found.");
 		}
 
-		final StableData stableData = new StableData();
-		stableData.setCode(stable.getCode());
-		stableData.setName(stable.getName());
-		stableData.setNation(stable.getNation());
-		stableData.setFirstVehicle(getVehicleData(stable.getFirstVehicle()));
-		stableData.setSecondVehicle(getVehicleData(stable.getFirstVehicle()));
-		return stableData;
-	}
-
-	private VehicleData getVehicleData(final VehicleModel vehicleM)
-	{
-		final VehicleData vehicle = new VehicleData();
-		vehicle.setCode(vehicleM.getCode());
-		vehicle.setName(vehicleM.getName());
-		vehicle.setNumber(vehicleM.getNumber());
-		vehicle.setType(vehicleM.getType().toString());
-		return vehicle;
+		return stableConverter.convert(stable);
 	}
 
 	@Required
@@ -83,5 +62,12 @@ public class DefaultStableFacade implements StableFacade
 	{
 		this.stableService = stableService;
 	}
+
+	@Required
+	public void setStableConverter(final AbstractPopulatingConverter<StableModel, StableData> stableConverter)
+	{
+		this.stableConverter = stableConverter;
+	}
+
 
 }
