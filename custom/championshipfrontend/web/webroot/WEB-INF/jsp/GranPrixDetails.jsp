@@ -12,15 +12,17 @@
 	<p>${granPrix.laps}</p>
 
 	<table>
-	<tr>
-	<th>Position</th>
-	<th>Driver</th>
-	<th>Time</th>
-	</tr>
+		<tr>
+			<th>Position</th>
+			<th>Driver</th>
+			<th>Time</th>
+		</tr>
 		<c:forEach var="placing" items="${granPrix.placing}">
 			<tr>
 				<td>${placing.position}</td>
-				<td>${placing.driver.name} ${placing.driver.surname}</td>
+				<td><a
+					href="/championshipfrontend/drivers/${placing.driver.code}">${placing.driver.name}
+						${placing.driver.surname}</a></td>
 				<td>${placing.time}</td>
 			</tr>
 		</c:forEach>

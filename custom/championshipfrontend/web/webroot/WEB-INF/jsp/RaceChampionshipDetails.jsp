@@ -33,7 +33,9 @@
 		<c:forEach var="driverRanking"
 			items="${raceChampionship.driverRanking.placing}">
 			<tr>
-				<td>${driverRanking.driver.name} ${driverRanking.driver.surname}</td>
+				<td><a
+					href="championshipdrontend/drivers/${driverRanking.driver.code}">${driverRanking.driver.name}
+						${driverRanking.driver.surname}</a></td>
 				<td>${driverRanking.driver.vehicle.name}</td>
 				<td>${driverRanking.points}</td>
 			</tr>
@@ -49,7 +51,8 @@
 		<c:forEach var="stableRanking"
 			items="${raceChampionship.stableRanking.placing}">
 			<tr>
-				<td>${stableRanking.stable.name}</td>
+				<td><a
+					href="championshipfrontend/stables/${stableRanking.stable.code}">${stableRanking.stable.name}</a></td>
 				<td>${stableRanking.stable.nation}</td>
 				<td>${stableRanking.points}</td>
 			</tr>

@@ -37,7 +37,7 @@ public class DefaultDriverDAO implements DriverDAO
 	@Override
 	public List<DriverModel> findDriversByVehicle(final String vehicle)
 	{
-		String queryString = "SELECT {p:" + VehicleModel.PK + "} FROM {" + VehicleModel._TYPECODE + " AS v} "//
+		String queryString = "SELECT {p:" + VehicleModel.PK + "} FROM {" + VehicleModel._TYPECODE + " AS p} "//
 				+ "WHERE " + "{p:" + VehicleModel.CODE + "}=?vehicle";
 		FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		query.addQueryParameter("vehicle", vehicle);

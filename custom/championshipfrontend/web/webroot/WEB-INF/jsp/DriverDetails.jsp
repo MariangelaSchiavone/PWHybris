@@ -8,8 +8,10 @@
 
 	<p>${driver.nationality}</p>
 	<p>${driver.vehicle.name}</p>
-	<p>${stable.name}</p>
+	<p>
+		<a href="/championshipfrontend/stables/${stable.code}">${stable.name}</a>
+	</p>
 
-	<a href="../racechampionships">Back to RaceChampionships</a>
+	<a href="../raceChampionships">Back to RaceChampionships</a>
 </body>
 </html>

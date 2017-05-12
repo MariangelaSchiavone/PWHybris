@@ -32,8 +32,8 @@ public class DefaultStableDao implements StableDao
 	@Override
 	public List<StableModel> findStablesByVehicle(final String vehicle)
 	{
-		String queryString = "SELECT {p:" + VehicleModel.PK + "} FROM {" + VehicleModel._TYPECODE + " AS v} "//
-				+ "WHERE " + "{p:" + VehicleModel.CODE + "}=?vehicle";
+		String queryString = "SELECT {v:" + VehicleModel.PK + "} FROM {" + VehicleModel._TYPECODE + " AS v} "//
+				+ "WHERE " + "{v:" + VehicleModel.CODE + "}=?vehicle";
 		FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		query.addQueryParameter("vehicle", vehicle);
 		final VehicleModel vehicleModel = flexibleSearchService.<VehicleModel> search(query).getResult().get(0);
