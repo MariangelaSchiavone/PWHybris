@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 12-mag-2017 16.42.18                        ---
+ * --- Generated at 17-mag-2017 23.52.27                        ---
  * ----------------------------------------------------------------
  */
 package it.gruppofanta.championshiprace.jalo;

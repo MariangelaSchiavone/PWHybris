@@ -21,8 +21,8 @@
 			
 		<enumtypes>
 	        <enumtype code="TypeEnum" autocreate="true" generate="true" dynamic="false">
-	            <value code="CAR"/>
-	            <value code="MOTO"/>
+	            <value code="CAR" />
+	            <value code="MOTO" />
 	        </enumtype>
 		</enumtypes>
 	
@@ -41,11 +41,11 @@
 		    </relation>
 		     <relation code="DriverRankingEntryRelation" localized="false" generate="true" autocreate="true">
 		       <sourceElement type="DriverRanking" qualifier="driverRanking" cardinality="one" />
-		       <targetElement type="DriverEntry" qualifier="driversEntry" cardinality="many"/>
+		       <targetElement type="DriverEntry" qualifier="driversEntry" cardinality="many" collectiontype="list"/>
 		    </relation>
 		    <relation code="StableRankingEntryRelation" localized="false" generate="true" autocreate="true">
 		       <sourceElement type="StableRanking" qualifier="stableRanking" cardinality="one" />
-		       <targetElement type="StableEntry" qualifier="stablesEntry" cardinality="many"/>
+		       <targetElement type="StableEntry" qualifier="stablesEntry" cardinality="many" collectiontype="list"/>
 		    </relation>
 		</relations>
 		

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 12-mag-2017 16.42.18                        ---
+ * --- Generated at 18-mag-2017 0.04.21                         ---
  * ----------------------------------------------------------------
  */
 package it.gruppofanta.championship.jalo;
@@ -13,9 +13,9 @@ import de.hybris.platform.jalo.type.CollectionType;
 import de.hybris.platform.util.OneToManyHandler;
 import it.gruppofanta.championship.constants.ChampionshipConstants;
 import it.gruppofanta.championship.jalo.StableEntry;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -38,7 +38,7 @@ public abstract class GeneratedStableRanking extends GenericItem
 	null,
 	false,
 	true,
-	CollectionType.COLLECTION
+	CollectionType.LIST
 	);
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
@@ -93,16 +93,16 @@ public abstract class GeneratedStableRanking extends GenericItem
 	 * <i>Generated method</i> - Getter of the <code>StableRanking.stablesEntry</code> attribute.
 	 * @return the stablesEntry
 	 */
-	public Collection<StableEntry> getStablesEntry(final SessionContext ctx)
+	public List<StableEntry> getStablesEntry(final SessionContext ctx)
 	{
-		return STABLESENTRYHANDLER.getValues( ctx, this );
+		return (List<StableEntry>)STABLESENTRYHANDLER.getValues( ctx, this );
 	}
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>StableRanking.stablesEntry</code> attribute.
 	 * @return the stablesEntry
 	 */
-	public Collection<StableEntry> getStablesEntry()
+	public List<StableEntry> getStablesEntry()
 	{
 		return getStablesEntry( getSession().getSessionContext() );
 	}
@@ -111,7 +111,7 @@ public abstract class GeneratedStableRanking extends GenericItem
 	 * <i>Generated method</i> - Setter of the <code>StableRanking.stablesEntry</code> attribute. 
 	 * @param value the stablesEntry
 	 */
-	public void setStablesEntry(final SessionContext ctx, final Collection<StableEntry> value)
+	public void setStablesEntry(final SessionContext ctx, final List<StableEntry> value)
 	{
 		STABLESENTRYHANDLER.setValues( ctx, this, value );
 	}
@@ -120,7 +120,7 @@ public abstract class GeneratedStableRanking extends GenericItem
 	 * <i>Generated method</i> - Setter of the <code>StableRanking.stablesEntry</code> attribute. 
 	 * @param value the stablesEntry
 	 */
-	public void setStablesEntry(final Collection<StableEntry> value)
+	public void setStablesEntry(final List<StableEntry> value)
 	{
 		setStablesEntry( getSession().getSessionContext(), value );
 	}

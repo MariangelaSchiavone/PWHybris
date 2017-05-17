@@ -49,6 +49,8 @@
 	<alias name="defaultStableService" alias="stableService"/>
     <bean id="defaultStableService" class="it.gruppofanta.championship.services.impl.DefaultStableService">
         <property name="stableDAO" ref="stableDAO"/>
-    </bean>		
+    </bean>
+
+    <bean id="driverRankingCronJob" class="it.gruppofanta.championship.jobs.DriverRankingCronJob" parent="abstractJobPerformable" />
 			
 </beans>

@@ -353,7 +353,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			true,
 			false,
-			CollectionType.COLLECTION
+			CollectionType.LIST
 		);
 	
 		createRelationAttributes(
@@ -373,7 +373,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			true,
 			false,
-			CollectionType.COLLECTION
+			CollectionType.LIST
 		);
 	
 
